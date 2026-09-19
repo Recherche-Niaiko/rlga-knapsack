@@ -91,7 +91,7 @@ L'action `.github/workflows/deploy.yml` met alors à jour l'application sur Rend
 
 ## 6. Dépôt privé du mémoire (facultatif)
 
-Le fichier `GIT_RECHERCHE/.gitignore` est déjà prêt : il exclut la clé d'API Zotero (`ZOTERO_REFERENCES/`), les dossiers contenant des articles ou des matériaux volumineux (`ETAT_DE_L_ART/`, `NOTES_DE_RECHERCHE_COFFRE_OBSIDIAN/`, `FORMATION_PRATIQUE/`, `OLD_PROJECTS/`, `SIMULATIONS/`, `VIDEOS_UTILES/`, `DATASETS/`), la réalisation (versionnée dans son propre dépôt), les fichiers auxiliaires LaTeX et les PDF horodatés des dossiers `versions/` (≈ 150 Mo ; supprimer la ligne `**/versions/` pour les versionner aussi). N'ajouter ensuite que les livrables :
+Le fichier `GIT_RECHERCHE/.gitignore` est déjà prêt : il exclut la clé d'API Zotero (`ZOTERO_REFERENCES/`), les dossiers contenant des articles ou des matériaux volumineux (`ETAT_DE_L_ART/`, `NOTES_DE_RECHERCHE_COFFRE_OBSIDIAN/`, `FORMATION_PRATIQUE/`, `OLD_PROJECTS/`, `SIMULATIONS/`, `VIDEOS_UTILES/`, `DATASETS/`), les matériaux de travail personnels (`BRAINSTORMINGS/`, `COMMUNICATIONS_EFFECTUÉES/`, `CVs/`, `FIGURES/`, `OLD_MEMOIRE/`), la réalisation (versionnée dans son propre dépôt), les fichiers auxiliaires LaTeX et les PDF horodatés des dossiers `versions/` (≈ 150 Mo ; supprimer la ligne `**/versions/` pour les versionner aussi). N'ajouter ensuite que les livrables :
 
 ```bash
 git init && git add 00_JOURNAL_DE_BORD 01_PROJET_DE_RECHERCHE 02_ETAT_DE_L_ART_FINAL 04_MANUSCRIT 05_SOUTENANCE \
@@ -108,6 +108,13 @@ git push -u origin main
 ```
 
 Les PDF du manuscrit sont horodatés à chaque compilation (`04_MANUSCRIT/versions/`) : les versions successives restent disponibles même sans Git.
+
+**Documents compilés.** Les PDF et le PPTX produits par la compilation (mémoire, état de l'art, projet, journal, diapositives) ne sont pas versionnés : ils se reconstruisent à partir des sources (`./build.sh`, `GUIDE_COMPILATION.md`). Les versions remises sont archivées comme fichiers joints d'une *Release* du dépôt privé :
+
+1. étiqueter le commit correspondant : `git tag -a soutenance-2026-09-25 -m "Version soutenue" && git push --tags` ;
+2. sur GitHub : *Releases → Draft a new release* → cette étiquette → titre « Mémoire soutenu le 25 septembre 2026 » → glisser `04_MANUSCRIT/Memoire_RALAIVAO_derniere_version.pdf`, `02_ETAT_DE_L_ART_FINAL/etat_de_l_art.pdf`, `01_PROJET_DE_RECHERCHE/projet_de_recherche.pdf`, `05_SOUTENANCE/beamer/soutenance.pdf` et `05_SOUTENANCE/markdown/soutenance.pptx` dans *Attach binaries* → *Publish release*.
+
+Faire de même, avec une étiquette `depot-AAAA-MM-JJ`, pour toute version remise au directeur ou aux rapporteurs.
 
 ## 7. Choisir une licence avant de rendre le dépôt public
 

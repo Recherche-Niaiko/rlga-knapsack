@@ -186,6 +186,8 @@ git remote add origin git@github.com:Recherche-Niaiko/memoire-master-rl-ga.git
 git push -u origin main
 ```
 
+Les documents compilés (PDF, PPTX) ne sont pas versionnés : joindre les versions remises à une *Release* du dépôt privé (étiquette `soutenance-2026-09-25`), comme décrit dans `GUIDE_GIT.md` §6.
+
 ## 12. Démonstration devant le jury : application locale et tunnel Cloudflare
 
 Avec 0,1 processeur, l'application Render convient à la consultation mais reste lente pour les calculs. Pour la démonstration, l'application tourne sur l'ordinateur de l'auteur (toute sa puissance, limites par défaut : 5 000 objets, 10 exécutions) et un **tunnel Cloudflare** gratuit, sans compte ni carte, lui donne une adresse publique temporaire que le jury peut ouvrir sur ses propres appareils :
