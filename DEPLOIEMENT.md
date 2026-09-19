@@ -2,7 +2,7 @@
 
 Ce plan décrit, dans l'ordre, ce qu'il reste à faire pour publier le code et mettre l'application en ligne avant la soutenance du **vendredi 25 septembre 2026**. Toutes les actions sont à réaliser par l'auteur ; aucun commit ni aucun déploiement n'a été fait à sa place.
 
-**État au 19 septembre 2026 (soir)** : phase 4 terminée ; phase 5 étapes 1 à 3 terminées — code publié sur `Recherche-Niaiko/rlga-knapsack` (branche `main`, étiquette `v1.0.0`), « Tests rapides » en vert. Numérotation retenue : **1.0.0** pour la première version publique ; la mise en cohérence des fichiers (`VERSION`, `CHANGELOG.md`, annexe du mémoire) demande un second commit et le déplacement de l'étiquette (phase 5, étape 2 bis). **Prochaines actions : étape 2 bis, puis étape 4 (Release), puis phase 6 (Render).**
+**État au 19 septembre 2026 (soir)** : phases 4, 5 et 6 terminées — code publié (`v1.0.0`, *Release*, protections actives) ; service Render **Live** sur <https://rlga-knapsack.onrender.com> (vérifié : version 1.0.0 affichée, curseur limité à 2 000 objets, comparaison par défaut terminée en 34 s). **Prochaines actions : phase 7 (Space Static Hugging Face), puis phase 8 (secrets GitHub).**
 
 ## 1. Contrainte : offre gratuite « Static » de Hugging Face
 
@@ -43,7 +43,7 @@ Sources : [Render — offre gratuite](https://render.com/docs/free), [Render —
                                         ├─ deploy hook ──▶ Render : image Docker de la version testée
                                         │                  https://rlga-knapsack.onrender.com   (application)
                                         └─ envoi de vitrine/ ──▶ Hugging Face Space Static
-                                                           https://recherche-niaiko-rlga-knapsack.hf.space   (vitrine)
+                                                           https://recherche-niaiko-rlga-knapsack.static.hf.space   (vitrine)
 
  jour de la soutenance : ./app_taipy/run_app.sh + cloudflared ──▶ https://<aléatoire>.trycloudflare.com
 
@@ -55,8 +55,8 @@ Sources : [Render — offre gratuite](https://render.com/docs/free), [Render —
 | Organisation GitHub | `Recherche-Niaiko` (propriétaire : compte `Niaiko22`, `ralaivaoniaiko@gmail.com`) |
 | Dépôt du code (public) | `git@github.com:Recherche-Niaiko/rlga-knapsack.git` |
 | Dépôt du mémoire (privé) | `git@github.com:Recherche-Niaiko/memoire-master-rl-ga.git` |
-| Application (Render) | service `rlga-knapsack` → `https://rlga-knapsack.onrender.com` (adresse à confirmer à la création : Render ajoute un suffixe si le nom est pris) |
-| Vitrine (Hugging Face) | Space Static `Recherche-Niaiko/rlga-knapsack` → `https://recherche-niaiko-rlga-knapsack.hf.space` |
+| Application (Render) | service `rlga-knapsack` → `https://rlga-knapsack.onrender.com` (en ligne depuis le 19/09/2026) |
+| Vitrine (Hugging Face) | Space Static `Recherche-Niaiko/rlga-knapsack` → `https://recherche-niaiko-rlga-knapsack.static.hf.space` |
 | Version déployée | `1.0.0`, première version publique (fichier `VERSION`, affichée en pied de page de l'application) |
 
 ## 3. Calendrier proposé
@@ -106,7 +106,7 @@ Sources : [Render — offre gratuite](https://render.com/docs/free), [Render —
    git push -u origin main --tags
    ```
 
-   **2 bis. Mise en cohérence de la numérotation 1.0.0 — à faire** : le premier commit contenait encore `VERSION = 1.3.0`. Après la mise à jour des fichiers (19/09 au soir), valider ces changements et replacer l'étiquette `v1.0.0` sur le nouveau commit (aucune *Release* n'ayant encore été publiée, déplacer l'étiquette est sans conséquence) :
+   **2 bis. Mise en cohérence de la numérotation 1.0.0 — fait** : le premier commit contenait encore `VERSION = 1.3.0`. Après la mise à jour des fichiers (19/09 au soir), valider ces changements et replacer l'étiquette `v1.0.0` sur le nouveau commit (aucune *Release* n'ayant encore été publiée, déplacer l'étiquette est sans conséquence) :
 
    ```bash
    cd 03_REALISATION_RL_GA_KP

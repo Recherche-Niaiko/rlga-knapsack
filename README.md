@@ -5,7 +5,7 @@ Implémentation, expérimentations et application de démonstration du mémoire 
 (RALAIVAO Niaiko Michaël — ENI, Université de Fianarantsoa — laboratoire LIMAD, équipe GLoRIA).
 
 **Code source** : <https://github.com/Recherche-Niaiko/rlga-knapsack>  
-**Application en ligne** (prévue) : <https://rlga-knapsack.onrender.com> — **page de présentation** : <https://recherche-niaiko-rlga-knapsack.hf.space> — voir `DEPLOIEMENT.md`.
+**Application en ligne** : <https://rlga-knapsack.onrender.com> — **page de présentation** : <https://recherche-niaiko-rlga-knapsack.static.hf.space> — voir `DEPLOIEMENT.md`.
 
 ## Installation
 

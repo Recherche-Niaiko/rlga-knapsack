@@ -44,10 +44,25 @@ jobs:
           if [ -z "$HF_TOKEN" ] || [ -z "$HF_SPACE" ]; then echo "HF_TOKEN ou HF_SPACE absent : étape ignorée."; exit 0; fi
           pip install --quiet huggingface_hub
           python - <<'PY'
-          import os
+          import os, sys
           from huggingface_hub import HfApi
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          space = os.environ["HF_SPACE"].strip()
+          def echec(message):
+              print(f"::error title=Vitrine Hugging Face::{message}")   # annotation visible sur la page du workflow
+              sys.exit(1)
+          try:
+              qui = api.whoami()
+              print(f"Jeton de « {qui.get('name')} », rôle : {qui.get('auth', {}).get('accessToken', {}).get('role')}")
+          except Exception as e:
+              echec(f"Jeton HF_TOKEN refusé par Hugging Face ({e}) : en créer un nouveau (type Write) et mettre à jour le secret.")
           version = open("VERSION").read().strip()
-          HfApi(token=os.environ["HF_TOKEN"]).upload_folder(
-              folder_path="vitrine", repo_id=os.environ["HF_SPACE"], repo_type="space",
-              commit_message=f"Page vitrine v{version}")
+          try:
+              api.upload_folder(folder_path="vitrine", repo_id=space, repo_type="space",
+                                commit_message=f"Page vitrine v{version}")
+          except Exception as e:
+              echec(f"Envoi vers le Space « {space} » impossible : {str(e).splitlines()[0]} — vérifier que HF_SPACE vaut "
+                    "exactement « Organisation/nom » et que le jeton a le droit d'écriture sur les dépôts de l'organisation "
+                    "(jeton Write, ou Fine-grained avec écriture).")
+          print(f"Vitrine publiée sur le Space {space}.")
           PY
