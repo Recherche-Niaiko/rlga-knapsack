@@ -57,7 +57,7 @@ Sources : [Render — offre gratuite](https://render.com/docs/free), [Render —
 | Dépôt du mémoire (privé) | `git@github.com:Recherche-Niaiko/memoire-master-rl-ga.git` |
 | Application (Render) | service `rlga-knapsack` → `https://rlga-knapsack.onrender.com` (en ligne depuis le 19/09/2026) |
 | Vitrine (Hugging Face) | Space Static `Recherche-Niaiko/rlga-knapsack` → `https://recherche-niaiko-rlga-knapsack.static.hf.space` |
-| Version déployée | `1.0.0`, première version publique (fichier `VERSION`, affichée en pied de page de l'application) |
+| Version déployée | `1.0.1` (correctif de la première version publique `1.0.0` ; fichier `VERSION`, affichée en pied de page de l'application) |
 
 ## 3. Calendrier proposé
 
@@ -154,14 +154,14 @@ Ensuite, chaque `git push` sur `main` exécute les 36 tests et, **seulement s'il
 
 Sur l'application Render (attendre ≈ 1 min au premier accès si elle était en veille) :
 
-- [ ] la page d'accueil s'affiche et le pied de page indique la version **1.0.0** ;
+- [ ] la page d'accueil s'affiche et le pied de page indique la version en cours (**1.0.1**) ;
 - [ ] page « Instance » : le curseur du nombre d'objets s'arrête à **2 000** ;
 - [ ] page « Comparaison », réglages par défaut (200 objets, 2 exécutions, 100 générations) : la comparaison aboutit en ≈ 1 min 30 ;
 - [ ] toutes les méthodes, 5 exécutions, 300 générations, 2 000 objets : le calcul est **refusé** avec un conseil ;
 - [ ] un calcul lancé puis « Arrêter le calcul » : message « Calcul arrêté à votre demande » ;
 - [ ] page « Cas d'usage » (camion humanitaire) : résultats en 2 à 3 minutes ;
 - [ ] page « Hypothèses » : avec 200 générations, le calcul est refusé avec un conseil ; avec 50 générations sur le budget communal, il aboutit ;
-- [ ] « À propos » : le lien vers le code ouvre `https://github.com/Recherche-Niaiko/rlga-knapsack` ;
+- [ ] « À propos » et pied de page : le lien (cliquable) vers le code ouvre `https://github.com/Recherche-Niaiko/rlga-knapsack` ;
 - [ ] *Render → Metrics* : mémoire toujours sous 512 Mo pendant ces essais.
 
 Sur la vitrine (<https://recherche-niaiko-rlga-knapsack.static.hf.space>) : la page s'affiche (téléphone, thème sombre), sans texte parasite en haut de page, et les deux boutons ouvrent l'application et le dépôt.

@@ -2,6 +2,16 @@
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) ; numérotation : [SemVer](https://semver.org/lang/fr/) (MAJEUR.MINEUR.CORRECTIF).
 
+## [1.0.1] — 2026-09-19
+### Modifié
+- Lien vers le code source cliquable dans le pied de page et la page « À propos » (phrases d'un seul paragraphe).
+- Schéma d'architecture de la page « À propos » : déploiement sur Render (application) et Hugging Face (page de présentation), 9 pages.
+- `README.md` et `DEPLOIEMENT.md` : adresses en ligne (`https://rlga-knapsack.onrender.com`, `https://recherche-niaiko-rlga-knapsack.static.hf.space`) et état du déploiement.
+### Corrigé
+- Page vitrine : texte « <head> » affiché en haut de page (balise coupée par le script inséré par Hugging Face).
+- Action « Déploiement » : diagnostic lisible en cas d'échec de l'envoi de la vitrine.
+Aucun changement du code de calcul ni des résultats.
+
 ## [1.0.0] — 2026-09-19 — première version publique
 Version publiée dans `Recherche-Niaiko/rlga-knapsack` et présentée à la soutenance du 25 septembre 2026. Elle réunit les versions de développement 0.1.0 à 0.3.0 (voir plus bas) et les ajouts suivants.
 ### Ajouté

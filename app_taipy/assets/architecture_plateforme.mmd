@@ -26,11 +26,12 @@ flowchart TB
   end
   subgraph PRES["Couche présentation : application web"]
     direction LR
-    T1["Interface web<br/>8 pages, thème clair/sombre"] <--> T2["Moteur de scénarios<br/>scénarios, tâches, données"]
+    T1["Interface web<br/>9 pages, thème clair/sombre"] <--> T2["Moteur de scénarios<br/>scénarios, tâches, données"]
   end
   subgraph DEP["Déploiement"]
     direction LR
-    Y3["GitHub<br/>versions, actions"] --> Y2["Hugging Face<br/>Spaces"]
+    Y3["GitHub<br/>versions, tests, actions"] --> Y2["Render<br/>application (image Docker)"]
+    Y3 --> Y4["Hugging Face<br/>page de présentation"]
     Y1["Image<br/>Docker"] --> Y2
   end
   DON --> REF --> MET

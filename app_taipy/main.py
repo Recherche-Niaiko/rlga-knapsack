@@ -42,6 +42,10 @@ VERSION = "dev"
 if os.path.exists(_vf):
     with open(_vf) as _f:
         VERSION = _f.read().strip()
+# Lignes contenant le lien cliquable vers le code (texte en mode Markdown, en un seul paragraphe)
+PIED_TXT = (f"RALAIVAO Niaiko Michaël — École Nationale d'Informatique, Université de Fianarantsoa — Laboratoire LIMAD, "
+            f"équipe GLoRIA — version {VERSION} — code source : [{GITHUB_URL}]({GITHUB_URL})")
+CODE_TXT = f"Code, données et résultats : [{GITHUB_URL}]({GITHUB_URL}) — version déployée : {VERSION}."
 
 COLORS = {"GA-QL-T": "#2a78d6", "GA-RAND": "#eb6834", "GA-QL": "#1baf7a", "GA-UCB": "#eda100",
           "GA": "#e34948", "GREEDY": "#008300", "DP": "#6b6a66", "MILP": "#8a8984"}
@@ -990,7 +994,7 @@ Enregistrez une expérience complète, exécutez-la à nouveau quand vous le sou
 |>
 
 <|part|class_name=footer|
-RALAIVAO Niaiko Michaël — École Nationale d'Informatique, Université de Fianarantsoa — Laboratoire LIMAD, équipe GLoRIA — version <|{VERSION}|text|> — code source : <|{GITHUB_URL}|text|>
+<|{PIED_TXT}|text|mode=markdown|>
 |>
 """)
 
@@ -1543,7 +1547,7 @@ page_about = Markdown("""
 
 ### Code source et reproductibilité
 
-Code, données et résultats : <|{GITHUB_URL}|text|> — version déployée : <|{VERSION}|text|>.
+<|{CODE_TXT}|text|mode=markdown|>
 
 Technologies : Python, NumPy, SciPy (solveur HiGHS), Pandas, Matplotlib et Plotly.
 |>
