@@ -29,17 +29,17 @@ Configuration en place (`git config --global -e`) :
 
 La clé SSH du compte `Niaiko22` est enregistrée (`ssh -T git@github.com` → « Hi Niaiko22! ») et ce compte est *Owner* de l'organisation `Recherche-Niaiko`. Les commits porteront le nom « Niaiko22 » ; pour signer ceux d'un dépôt de votre nom complet, exécuter dans ce dépôt `git config user.name "RALAIVAO Niaiko Michaël"` (sans `--global`).
 
-## 3. Publier le dépôt de la réalisation
+## 3. Publier le dépôt de la réalisation — fait
 
-Le dépôt distant `Recherche-Niaiko/rlga-knapsack` (public) existe et est vide ; il reste à créer le dépôt local et à le publier :
+Première publication faite le 19 septembre 2026 (branche `main`, étiquette `v1.0.0`, tests verts). Pour mémoire, les commandes utilisées :
 
 ```bash
 cd 03_REALISATION_RL_GA_KP
 git init
 git add .
 git status                      # vérifier : pas de .venv/, .taipy/, user_data/ (exclus par .gitignore) ; LICENSE et LICENSE-docs présents
-git commit -m "Version 1.3.0 : réalisation RL-in-GA, application web, encadrement des ressources et tests"
-git tag -a v1.3.0 -m "Version présentée à la soutenance"
+git commit -m "Version 1.0.0 : réalisation RL-in-GA, application web, encadrement des ressources et tests"
+git tag -a v1.0.0 -m "Version présentée à la soutenance"
 ```
 
 ```bash
@@ -74,14 +74,14 @@ La clé SSH est celle du compte `Niaiko22` : en tant que propriétaire de l'orga
 
 ## 5. Publier une nouvelle version
 
-1. Mettre à jour le numéro dans `VERSION` (MAJEUR.MINEUR.CORRECTIF : `1.2.1` pour une correction, `1.3.0` pour un ajout, `2.0.0` pour un changement incompatible).
+1. Mettre à jour le numéro dans `VERSION` (MAJEUR.MINEUR.CORRECTIF : `1.0.1` pour une correction, `1.1.0` pour un ajout, `2.0.0` pour un changement incompatible).
 2. Décrire les changements en tête de `CHANGELOG.md`.
 3. Valider et étiqueter :
 
 ```bash
 git add VERSION CHANGELOG.md <autres fichiers>
-git commit -m "chore: version 1.3.0"
-git tag -a v1.3.0 -m "Version 1.3.0"
+git commit -m "chore: version 1.0.1"
+git tag -a v1.0.1 -m "Version 1.0.1"
 git push && git push --tags
 ```
 

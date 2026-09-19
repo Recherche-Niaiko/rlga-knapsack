@@ -2,7 +2,8 @@
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) ; numérotation : [SemVer](https://semver.org/lang/fr/) (MAJEUR.MINEUR.CORRECTIF).
 
-## [1.3.0] — 2026-09-19
+## [1.0.0] — 2026-09-19 — première version publique
+Version publiée dans `Recherche-Niaiko/rlga-knapsack` et présentée à la soutenance du 25 septembre 2026. Elle réunit les versions de développement 0.1.0 à 0.3.0 (voir plus bas) et les ajouts suivants.
 ### Ajouté
 - Encadrement des ressources des calculs lourds (`app_taipy/ressources.py`, `app_taipy/worker.py`) : exécution dans un processus séparé, file d'attente globale (un calcul à la fois), limites de mémoire, de temps processeur et de durée, priorité basse, un seul fil numérique, estimation de la durée avant lancement et refus au-delà du budget, bouton « Arrêter le calcul » sur les pages Comparaison, Cas d'usage, Hypothèses et Scénarios.
 - Tests unitaires (`tests/test_unitaires.py`), de robustesse (`tests/test_ressources.py`), de performance (`tests/test_performance.py`, rapport dans `results/performance/`) et d'intégration (`tests/test_application.py`) ; exécutés par l'intégration continue.
@@ -14,7 +15,9 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) ; numérotatio
 - Blocage de l'ordinateur lorsqu'une comparaison lançait toutes les méthodes sur une grande instance : le calcul occupait le serveur web lui-même, sans limite de durée ni de concurrence.
 - Bornes des paramètres appliquées aussi côté serveur (taille, exécutions, générations, limite de la PLNE), y compris pour les scénarios.
 
-## [1.2.0] — 2026-09-19
+## Versions de développement (non publiées)
+
+## [0.3.0] — 2026-09-19
 ### Ajouté
 - Page « Hypothèses » : vérification de H1 à H4 sur un cas d'usage ou sur l'instance courante (exécutions appariées, tests de Wilcoxon unilatéraux, verdicts comparés à ceux du mémoire).
 - Surlignage de la meilleure valeur par colonne (ou par ligne pour les tableaux des campagnes) dans tous les tableaux de résultats.
@@ -29,7 +32,7 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) ; numérotatio
 ### Supprimé
 - Téléchargement public du guide de démonstration (page « À propos »).
 
-## [1.1.0] — 2026-09-19
+## [0.2.0] — 2026-09-19
 ### Ajouté
 - Refonte de l'interface Taipy : menu latéral à icônes, thème clair/sombre, page d'accueil pour les visiteurs, parcours guidé en étapes, indicateurs (`metric`), figures commentées, page « À propos ».
 - Déploiement : `Dockerfile`, `requirements-app.txt`, métadonnées Hugging Face Spaces, action GitHub de déploiement automatique, test de fumée.
@@ -39,7 +42,7 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) ; numérotatio
 - Figures regénérées en français, polices agrandies, sans titre interne (légendes dans le manuscrit et l'application).
 - Équipe d'accueil : GLoRe devient GLoRIA.
 
-## [1.0.0] — 2026-09-18
+## [0.1.0] — 2026-09-18
 ### Ajouté
 - Paquet `rlga_kp` (instances, PD, PLNE HiGHS, glouton, AG vectorisé, contrôleurs fixe/aléatoire/UCB1/Q-learning, pré-entraînement).
 - Campagnes E0–E5, analyses statistiques et figures ; application Taipy initiale ; cas d'usage.

@@ -2,7 +2,7 @@
 
 Ce plan décrit, dans l'ordre, ce qu'il reste à faire pour publier le code et mettre l'application en ligne avant la soutenance du **vendredi 25 septembre 2026**. Toutes les actions sont à réaliser par l'auteur ; aucun commit ni aucun déploiement n'a été fait à sa place.
 
-**État au 19 septembre 2026 (soir)** : phase 4 terminée (clé SSH, organisation, configuration de Git) ; les dépôts `Recherche-Niaiko/rlga-knapsack` et `Recherche-Niaiko/memoire-master-rl-ga` existent sur GitHub et sont **vides** (vérifié par `git ls-remote`) ; aucun dépôt Git local n'est encore initialisé. **Prochaine action : phase 5, étape 2 (premier commit et publication du code).**
+**État au 19 septembre 2026 (soir)** : phase 4 terminée ; phase 5 étapes 1 à 3 terminées — code publié sur `Recherche-Niaiko/rlga-knapsack` (branche `main`, étiquette `v1.0.0`), « Tests rapides » en vert. Numérotation retenue : **1.0.0** pour la première version publique ; la mise en cohérence des fichiers (`VERSION`, `CHANGELOG.md`, annexe du mémoire) demande un second commit et le déplacement de l'étiquette (phase 5, étape 2 bis). **Prochaines actions : étape 2 bis, puis étape 4 (Release), puis phase 6 (Render).**
 
 ## 1. Contrainte : offre gratuite « Static » de Hugging Face
 
@@ -57,7 +57,7 @@ Sources : [Render — offre gratuite](https://render.com/docs/free), [Render —
 | Dépôt du mémoire (privé) | `git@github.com:Recherche-Niaiko/memoire-master-rl-ga.git` |
 | Application (Render) | service `rlga-knapsack` → `https://rlga-knapsack.onrender.com` (adresse à confirmer à la création : Render ajoute un suffixe si le nom est pris) |
 | Vitrine (Hugging Face) | Space Static `Recherche-Niaiko/rlga-knapsack` → `https://recherche-niaiko-rlga-knapsack.hf.space` |
-| Version déployée | `1.3.0` (fichier `VERSION`, affichée en pied de page de l'application) |
+| Version déployée | `1.0.0`, première version publique (fichier `VERSION`, affichée en pied de page de l'application) |
 
 ## 3. Calendrier proposé
 
@@ -93,23 +93,36 @@ Sources : [Render — offre gratuite](https://render.com/docs/free), [Render —
 ## 5. Dépôt public du code
 
 1. ~~Créer le dépôt `rlga-knapsack` dans l'organisation~~ — **fait** : le dépôt public existe et est vide. Vérifier seulement qu'il ne contient ni README, ni `.gitignore`, ni licence créés par GitHub (sinon, le premier `git push` serait refusé ; voir la remarque ci-dessous). Facultatif : ajouter la description « Apprentissage par renforcement dans l'algorithme génétique pour le problème du sac à dos — Master Recherche, ENI » (*About → ⚙*).
-2. **Premier commit et publication — prochaine action :**
+2. **Premier commit et publication — fait** (commandes pour mémoire) :
 
    ```bash
    cd 03_REALISATION_RL_GA_KP
    git init
    git add .
    git status              # ni .venv/, ni .taipy/, ni user_data/, ni guides personnels
-   git commit -m "Version 1.3.0 : réalisation RL-in-GA, application web, encadrement des ressources et tests"
-   git tag -a v1.3.0 -m "Version présentée à la soutenance"
+   git commit -m "Version 1.0.0 : réalisation RL-in-GA, application web, encadrement des ressources et tests"
+   git tag -a v1.0.0 -m "Version présentée à la soutenance"
    git remote add origin git@github.com:Recherche-Niaiko/rlga-knapsack.git
    git push -u origin main --tags
+   ```
+
+   **2 bis. Mise en cohérence de la numérotation 1.0.0 — à faire** : le premier commit contenait encore `VERSION = 1.3.0`. Après la mise à jour des fichiers (19/09 au soir), valider ces changements et replacer l'étiquette `v1.0.0` sur le nouveau commit (aucune *Release* n'ayant encore été publiée, déplacer l'étiquette est sans conséquence) :
+
+   ```bash
+   cd 03_REALISATION_RL_GA_KP
+   git status                                   # VERSION, CHANGELOG.md, GUIDE_GIT.md, DEPLOIEMENT.md modifiés
+   git add -A
+   git commit -m "chore: numérotation de la première version publique (1.0.0)"
+   git tag -d v1.0.0                            # supprime l'étiquette locale
+   git push origin :refs/tags/v1.0.0            # supprime l'étiquette distante
+   git tag -a v1.0.0 -m "Version présentée à la soutenance"
+   git push && git push --tags
    ```
 
    *Remarque* : si GitHub refuse le `push` parce que le dépôt distant contient déjà un commit (README créé à la création), exécuter `git pull --rebase origin main` puis relancer `git push -u origin main --tags`.
 
 3. **Vérifications** : la licence « MIT » apparaît dans la colonne de droite ; l'onglet *Actions* montre « Tests rapides » en vert (≈ 4 minutes). L'action « Déploiement » se déclenche ensuite et ignore ses étapes tant que les secrets de la phase 8 ne sont pas enregistrés : c'est normal.
-4. *Releases → Draft a new release* → étiquette `v1.3.0` → titre « Version 1.3.0 — soutenance » → reprendre la section 1.3.0 de `CHANGELOG.md` → *Publish*.
+4. *Releases → Draft a new release* → étiquette `v1.0.0` → titre « Version 1.0.0 — soutenance » → reprendre la section 1.0.0 de `CHANGELOG.md` → *Publish*.
 5. Conseillé : *Settings → Branches → Add rule* sur `main`, « Require status checks to pass » (« Tests rapides »).
 
 ## 6. Application interactive sur Render
@@ -141,7 +154,7 @@ Ensuite, chaque `git push` sur `main` exécute les 36 tests et, **seulement s'il
 
 Sur l'application Render (attendre ≈ 1 min au premier accès si elle était en veille) :
 
-- [ ] la page d'accueil s'affiche et le pied de page indique la version **1.3.0** ;
+- [ ] la page d'accueil s'affiche et le pied de page indique la version **1.0.0** ;
 - [ ] page « Instance » : le curseur du nombre d'objets s'arrête à **2 000** ;
 - [ ] page « Comparaison », réglages par défaut (200 objets, 2 exécutions, 100 générations) : la comparaison aboutit en ≈ 1 min 30 ;
 - [ ] toutes les méthodes, 5 exécutions, 300 générations, 2 000 objets : le calcul est **refusé** avec un conseil ;
@@ -155,7 +168,7 @@ Sur la vitrine : la page s'affiche (téléphone, thème sombre) et les deux bout
 
 ## 10. Report des adresses dans les documents
 
-Me transmettre les deux adresses définitives : je les reporte dans le `README.md`, l'annexe E et le chapitre 6 du mémoire, la diapositive « Mise en ligne et versions » et la vitrine, puis je recompile le mémoire, l'état de l'art et les diapositives. Ces changements forment une version **1.3.1** (correctif de documentation), publiée comme au §5 de `GUIDE_GIT.md`.
+Me transmettre les deux adresses définitives : je les reporte dans le `README.md`, l'annexe E et le chapitre 6 du mémoire, la diapositive « Mise en ligne et versions » et la vitrine, puis je recompile le mémoire, l'état de l'art et les diapositives. Ces changements forment une version **1.0.1** (correctif de documentation), publiée comme au §5 de `GUIDE_GIT.md`.
 
 ## 11. Dépôt privé du mémoire
 
@@ -189,7 +202,7 @@ L'adresse change à chaque lancement : la communiquer au jury le jour même (par
 | Situation | Action |
 |---|---|
 | Nouvelle version | `VERSION` + `CHANGELOG.md`, commit, étiquette, `git push && git push --tags` (`GUIDE_GIT.md` §5) : tests puis déploiements automatiques |
-| Retour à une version antérieure | *Actions → Déploiement → Run workflow* en choisissant l'étiquette voulue (par exemple `v1.3.0`) ; ou, sur Render, *Events → Rollback* vers un déploiement précédent |
+| Retour à une version antérieure | *Actions → Déploiement → Run workflow* en choisissant l'étiquette voulue (par exemple `v1.0.0`) ; ou, sur Render, *Events → Rollback* vers un déploiement précédent |
 | Déploiement en échec | onglet *Actions* du dépôt, onglet *Logs* du service Render ; jeton Hugging Face expiré : en recréer un et mettre à jour `HF_TOKEN` |
 | Application en veille (15 min sans trafic) | ouvrir l'adresse et attendre ≈ 1 min ; le faire avant toute présentation |
 | Heures gratuites épuisées (750 h/mois) | le service est suspendu jusqu'au mois suivant : un seul service gratuit par compte évite ce cas |
