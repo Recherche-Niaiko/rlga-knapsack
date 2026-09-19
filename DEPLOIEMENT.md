@@ -2,7 +2,7 @@
 
 Ce plan décrit, dans l'ordre, ce qu'il reste à faire pour publier le code et mettre l'application en ligne avant la soutenance du **vendredi 25 septembre 2026**. Toutes les actions sont à réaliser par l'auteur ; aucun commit ni aucun déploiement n'a été fait à sa place.
 
-**État au 19 septembre 2026 (soir)** : phases 4, 5 et 6 terminées — code publié (`v1.0.0`, *Release*, protections actives) ; service Render **Live** sur <https://rlga-knapsack.onrender.com> (vérifié : version 1.0.0 affichée, curseur limité à 2 000 objets, comparaison par défaut terminée en 34 s). **Prochaines actions : phase 7 (Space Static Hugging Face), puis phase 8 (secrets GitHub).**
+**État au 19 septembre 2026 (soir)** : phases 4 à 8 terminées — code publié (`v1.0.0`, *Release*, protections) ; application Render en ligne sur <https://rlga-knapsack.onrender.com> ; vitrine publiée sur <https://recherche-niaiko-rlga-knapsack.static.hf.space> ; déploiement automatique opérationnel (tests → Render + vitrine). **Prochaines actions : phase 9 (vérifications), phase 11 (dépôt privé du mémoire), phase 12 (répétition avec le tunnel).**
 
 ## 1. Contrainte : offre gratuite « Static » de Hugging Face
 
@@ -164,7 +164,9 @@ Sur l'application Render (attendre ≈ 1 min au premier accès si elle était en
 - [ ] « À propos » : le lien vers le code ouvre `https://github.com/Recherche-Niaiko/rlga-knapsack` ;
 - [ ] *Render → Metrics* : mémoire toujours sous 512 Mo pendant ces essais.
 
-Sur la vitrine : la page s'affiche (téléphone, thème sombre) et les deux boutons ouvrent l'application et le dépôt.
+Sur la vitrine (<https://recherche-niaiko-rlga-knapsack.static.hf.space>) : la page s'affiche (téléphone, thème sombre), sans texte parasite en haut de page, et les deux boutons ouvrent l'application et le dépôt.
+
+*Remarque* : Hugging Face insère un script juste après `<head>` à une position comptée en octets ; aucun caractère accentué ne doit donc précéder `<head>` dans `vitrine/index.html`, sinon la balise est coupée et « <head> » s'affiche en haut de la page.
 
 ## 10. Report des adresses dans les documents
 
