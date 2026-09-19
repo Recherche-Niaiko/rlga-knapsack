@@ -1,0 +1,19 @@
+{
+ "titre": "Chargement d'un camion de secours après un cyclone (poids et volume)",
+ "description": "Un camion de 6 tonnes et 20 m³ doit acheminer, depuis l'entrepôt, les lots de secours maximisant l'utilité humanitaire (personnes aidées × priorité). Deux contraintes de capacité : KP multidimensionnel (m = 2).",
+ "value_column": "utilité",
+ "weight_columns": [
+  "poids (kg)",
+  "volume (m3)"
+ ],
+ "capacities": [
+  6000.0,
+  20.0
+ ],
+ "unites": [
+  "kg",
+  "m³"
+ ],
+ "label_column": "lot",
+ "donnees": "synthétiques (illustratives)"
+}

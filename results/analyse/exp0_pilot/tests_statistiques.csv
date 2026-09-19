@@ -1,0 +1,4 @@
+comparaison,méthode,écart moyen cible (%),écart moyen autre (%),p (Wilcoxon),A12 moyen,V/E/D,n instances,p Holm,"significatif (α=0,05)"
+AG + QL (en ligne) vs AG standard,GA,0.018165922594074815,0.06467904795934636,0.15625,0.7870370370370371,4/2/0,6,0.46875,non
+AG + QL (en ligne) vs AG op. aléatoires,GA-RAND,0.018165922594074815,0.015772227918386415,0.25,0.4976851851851852,0/6/0,6,0.46875,non
+AG + QL (en ligne) vs AG + UCB1,GA-UCB,0.018165922594074815,0.013986370027139379,0.1875,0.4791666666666667,0/6/0,6,0.46875,non

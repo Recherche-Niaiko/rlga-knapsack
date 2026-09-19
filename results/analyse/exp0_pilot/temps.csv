@@ -1,0 +1,5 @@
+method,temps moyen (s)
+AG standard,2.6928267156666457
+AG op. aléatoires,3.0837294982499466
+AG + UCB1,3.0410302615550284
+AG + QL (en ligne),3.1625059589998474

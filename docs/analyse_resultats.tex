@@ -1,0 +1,761 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  french,
+  11pt,
+  a4paper,
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{TeX Gyre Pagella}
+  \setmathfont[]{TeX Gyre Pagella Math}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\ifLuaTeX
+\usepackage[bidi=basic,shorthands=off]{babel}
+\else
+\usepackage[bidi=default,shorthands=off]{babel}
+\fi
+\ifPDFTeX
+\else
+\babelfont{rm}[]{TeX Gyre Pagella}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage[style=apa]{biblatex}
+\addbibresource{../../02_ETAT_DE_L_ART_FINAL/references.bib}
+\usepackage{etoolbox,caption}\captionsetup{font=small,labelfont=bf,labelsep=endash}\captionsetup[table]{position=top}\AtBeginEnvironment{longtable}{\small}\addto\captionsfrench{\renewcommand{\tablename}{Tableau}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Analyse des résultats expérimentaux --- RL-in-GA pour le problème du sac à dos},
+  pdfauthor={RALAIVAO Niaiko Michaël --- Master Recherche, ENI / LIMAD / GLoRIA},
+  pdflang={fr},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={teal},
+  urlcolor={blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Analyse des résultats expérimentaux --- RL-in-GA pour le problème
+du sac à dos}
+\author{RALAIVAO Niaiko Michaël --- Master Recherche, ENI / LIMAD /
+GLoRIA}
+\date{Septembre 2026}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\section{Organisation des
+résultats}\label{analyse_resultats-organisation-des-ruxe9sultats}
+
+Les résultats sont regroupés par campagne ; chaque figure porte un
+numéro stable (préfixe \texttt{figNN\_}) et chaque tableau existe en
+CSV, Markdown et LaTeX dans
+\texttt{results/analyse/\textless{}campagne\textgreater{}/}, pour une
+intégration directe dans le manuscrit.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Campagne
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Question
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Tableaux (\texttt{results/analyse/…})
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Figures (\texttt{results/figures/…})
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+E0 --- calibration & quels réglages ? & \texttt{exp0\_pilot/} &
+\texttt{fig00\_*}, \texttt{fig05\_*}, \texttt{fig06\_*} \\
+E1 --- KP générés & QR1, QR2, QR3, QR5 & \texttt{e1\_kp01\_generes/} &
+\texttt{fig01\_e1\_*}, \texttt{fig04\_politique\_actions} \\
+E2 --- KP de référence & QR1, QR3, QR4 & \texttt{e2\_kp01\_benchmarks/}
+& \texttt{fig02\_e2\_*} \\
+E3 --- MKP & QR3 (transfert inter-problèmes), QR4 & \texttt{e3\_mkp/} &
+\texttt{fig03\_e3\_*} \\
+E5 --- passage à l'échelle & QR4 &
+\texttt{e5\_scalabilite/scalability.csv} &
+\texttt{fig07\_scalabilite} \\
+Cas d'usage & utilité pratique &
+\texttt{cas\_usage/resultats\_cas\_usage.csv} & \texttt{app\_*}
+(captures) \\
+\end{longtable}
+}
+
+\textbf{Lecture des indicateurs.} L'\emph{écart} est
+\(100\,(f_{\text{ref}} - f)/f_{\text{ref}}\) en \% (0 = optimum). Les
+écarts sont faibles en valeur absolue (quelques centièmes de \%) parce
+que l'AG, grâce à la réparation gloutonne, est déjà un bon solveur ; ce
+sont les \textbf{différences relatives} entre méthodes et leur
+\textbf{significativité} qui importent. Les comparaisons suivent les
+recommandations de \textcite{demsar_2006} et \textcite{derrac_2011} :
+test de Friedman suivi du test post hoc de Nemenyi pour le classement
+global, test de Wilcoxon apparié avec correction de Holm pour les
+comparaisons deux à deux. \emph{V/E/D} = nombre d'instances où la
+méthode cible gagne / fait jeu égal / perd (Mann--Whitney, α = 0,05) ;
+\(A_{12} > 0{,}5\) signifie que la cible obtient plus souvent un écart
+plus faible (taille d'effet de \textcite{vargha_delaney_2000}).
+
+\section{E0 --- Calibration (instances disjointes des
+tests)}\label{analyse_resultats-e0-calibration-instances-disjointes-des-tests}
+
+Réalisée sur 6 instances (SC, ASC, UC ; n = 500 ; graines 900+), selon
+la démarche de réglage des paramètres des algorithmes évolutionnaires
+décrite par \textcite{eiben_1999} :
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Tous les contrôleurs adaptatifs} (aléatoire, UCB1, QL en
+  ligne) divisent par ≈ 4 l'écart de l'AG standard sur SC/ASC, mais le
+  \textbf{QL en ligne ne dépasse pas la sélection aléatoire} (écart
+  moyen 0,0182 \% contre 0,0158 \%).
+\item
+  Parmi les \textbf{9 configurations fixes}, \textbf{UX + BF3} est de
+  loin la meilleure (SC : 0,0000 \% ; ASC : 0,0073 \%) et 1P + BF1 (l'AG
+  standard) la pire (SC : 0,1105 \%) --- un facteur \textgreater{} 10 :
+  \textbf{le choix des opérateurs compte}, et il existe donc une marge
+  pour l'apprentissage, ce qui est la prémisse de la sélection
+  adaptative d'opérateurs
+  \autocite{dacosta_2008,karimi-mamaghan_machine_2022}.
+\item
+  Choix de la \textbf{récompense} (Q-table entraînée sur UC/WC/SS puis
+  testée) : l'amélioration relative seule (R1) donne la meilleure
+  politique (SC 0,0000 \%, ASC 0,0149 \%) ; l'ajout du taux de succès
+  des descendants (SC 0,0237 \%) ou d'une pénalité de diversité (SC
+  0,0395 \%) la dégrade. → \textbf{R1 retenue}. Ce résultat est cohérent
+  avec les récompenses fondées sur l'amélioration de la qualité, les
+  plus fréquentes dans les revues sur l'apprentissage par renforcement
+  au service des algorithmes évolutionnaires
+  \autocite{song_reinforcement_2023,li_bridging_2025}.
+\end{enumerate}
+
+\section{E1 --- KP 0/1 générés (54 instances × 7 variantes × 10
+exécutions)}\label{analyse_resultats-e1-kp-01-guxe9nuxe9ruxe9s-54-instances-7-variantes-10-exuxe9cutions}
+
+Les instances sont générées selon les classes de
+\textcite{pisinger_where_2005} ; les contrôleurs comparés sont l'AG
+standard \autocite{holland_1975,goldberg_1989}, la sélection aléatoire,
+le bandit UCB1 \autocite{auer_2002} et le Q-learning
+\autocite{watkins_dayan_1992,sutton_barto_2018}, en ligne ou
+pré-entraîné.
+
+\textbf{Tableau 1 --- Écart moyen à l'optimum (\%)} (optimum prouvé par
+programmation dynamique
+\autocite{bellman_1957,kellerer_knapsack_book_2004}) :
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Classe
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+AG standard
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Aléatoire
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+UCB1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+QL en ligne
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{QL pré-entraîné}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+QL pré-entr. + φ(I)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Oracle fixe
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+UC & 0,0048 & 0,0028 & 0,0024 & 0,0031 & \textbf{0,0019} & 0,0031 &
+0,0021 \\
+WC & 0,0063 & 0,0039 & 0,0036 & 0,0039 & 0,0037 & 0,0035 &
+\textbf{0,0033} \\
+SS & 0,0000 & 0,0000 & 0,0000 & 0,0000 & 0,0000 & 0,0000 & 0,0000 \\
+ISC & 0,0053 & 0,0000 & 0,0000 & 0,0000 & 0,0000 & 0,0000 & 0,0000 \\
+SC & 0,1114 & 0,0258 & 0,0275 & 0,0275 & 0,0158 & 0,0258 &
+\textbf{0,0086} \\
+ASC & 0,1016 & 0,0341 & 0,0321 & 0,0319 & 0,0232 & 0,0309 &
+\textbf{0,0156} \\
+\textbf{Moyenne} & 0,0382 & 0,0111 & 0,0109 & 0,0111 & \textbf{0,0074} &
+0,0105 & 0,0049 \\
+Rang moyen (Friedman) & 6,05 & 4,08 & 3,96 & 4,08 & \textbf{3,10} & 4,09
+& 2,63 \\
+\end{longtable}
+}
+
+Test de Friedman : χ² = 130,15, p = 1,2·10⁻²⁵ (N = 54 instances,
+différence critique de Nemenyi CD = 1,23). Pour comparaison, le
+\textbf{glouton} fondé sur l'ordre des efficacités
+\autocite{dantzig_1957} laisse un écart moyen de 0,34 \% sur SC et ASC,
+soit \textbf{plus de 10 fois} celui des variantes adaptatives de l'AG.
+
+\textbf{Tableau 2 --- Tests appariés (Wilcoxon sur les 54 écarts moyens
+par instance, correction de Holm)} :
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Comparaison
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Écarts (\%)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+p (Holm)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(A_{12}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+V/E/D
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+QL pré-entraîné vs AG standard & 0,0074 vs 0,0382 & \textless{} 10⁻⁵ &
+0,74 & 28/26/0 \\
+QL pré-entraîné vs aléatoire & 0,0074 vs 0,0111 & 0,0005 & 0,59 &
+9/45/0 \\
+QL pré-entraîné vs UCB1 & 0,0074 vs 0,0109 & 0,003 & 0,58 & 10/44/0 \\
+QL pré-entraîné vs QL en ligne & 0,0074 vs 0,0111 & 0,002 & 0,58 &
+7/47/0 \\
+QL pré-entraîné vs oracle fixe & 0,0074 vs 0,0049 & 0,003 & 0,42 &
+0/45/9 \\
+QL en ligne vs AG standard & 0,0111 vs 0,0382 & \textless{} 10⁻⁵ & 0,71
+& 24/30/0 \\
+QL en ligne vs aléatoire & 0,0111 vs 0,0111 & 1,00 (n.s.) & 0,51 &
+0/53/1 \\
+QL en ligne vs UCB1 & 0,0111 vs 0,0109 & 1,00 (n.s.) & 0,51 & 1/51/2 \\
+\end{longtable}
+}
+
+\textbf{Effet de la taille} (classes SC et ASC) : l'écart de l'AG
+standard croît de 0,046 \% (n = 200) à 0,167 \% (n = 1 000) ; celui du
+QL pré-entraîné passe de 0,005 \% à 0,025 \%, contre 0,043 \% pour le QL
+en ligne et l'aléatoire à n = 1 000. \textbf{L'avantage du
+pré-entraînement augmente avec la taille} : les instances de 500 et 1
+000 objets sont hors de la distribution d'entraînement (≤ 200 objets).
+
+\textbf{Vitesse} : le QL pré-entraîné atteint son meilleur résultat plus
+tôt (génération 48,8 en moyenne, contre 56,9 pour l'AG standard et 50,5
+pour l'aléatoire) ; le surcoût de l'agent est négligeable (≈ 4,6 s
+contre 4,0 s par exécution, à n moyen de 567).
+
+\textbf{Méthodes exactes} : la PD résout toutes les instances d'E1 en ≤
+3,4 s ; la PLNE (solveur HiGHS \autocite{huangfu_hall_2018}, appelé
+depuis SciPy \autocite{virtanen_scipy_2020}) trouve l'optimum sur les 54
+instances mais \textbf{ne prouve pas l'optimalité} dans la limite de 30
+s pour 12 instances corrélées (SC, ISC, ASC de 500--1 000 objets),
+confirmant leur difficulté pour le \emph{Branch-and-Bound}
+\autocite{pisinger_where_2005,martello_toth_1990}.
+
+\textbf{Figures associées} : \texttt{fig01\_e1\_ecart\_par\_classe}
+(écarts et IC 95 \%), \texttt{fig01\_e1\_rangs\_friedman},
+\texttt{fig01\_e1\_boites} (distributions),
+\texttt{fig01\_e1\_convergence} (courbes et diversité),
+\texttt{fig01\_e1\_succes\_echecs}, \texttt{fig01\_e1\_qualite\_temps},
+\texttt{fig04\_politique\_actions}.
+
+\subsection{Ce que montre la politique apprise
+(QR5)}\label{analyse_resultats-ce-que-montre-la-politique-apprise-qr5}
+
+La figure \texttt{fig04\_politique\_actions} donne la fréquence des 9
+actions par tiers de la recherche :
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{QL en ligne et UCB1} : distributions \textbf{quasi uniformes}
+  (≈ 11 \% par action dans toutes les phases). En 200 générations, ils
+  n'identifient pas de préférence : leur comportement est en pratique
+  celui de la sélection aléatoire --- ce qui \textbf{explique} l'égalité
+  statistique avec GA-RAND (H2).
+\item
+  \textbf{QL pré-entraîné} : préférence nette pour le \textbf{croisement
+  uniforme} --- UX + SWAP (40 \%) et UX + BF3 (17--30 \%) en début de
+  recherche, UX + BF3 (46--54 \%) et UX + SWAP (33--39 \%) en fin de
+  recherche --- soit exactement la famille de l'oracle (UX + BF3),
+  \textbf{découverte sans la connaître} --- ce qui illustre l'intérêt de
+  la configuration dynamique d'algorithmes apprise hors ligne
+  \autocite{biedenkapp_2020,benjamins_2024} ---, sur des instances
+  faciles, et appliquée aux classes difficiles. En phase intermédiaire,
+  la répartition est presque uniforme : ces états ont été peu visités
+  pendant l'entraînement (valeurs Q quasi nulles), ce qui explique
+  l'écart résiduel avec l'oracle.
+\item
+  \textbf{φ(I)} n'apporte rien ici : avec 81 états au lieu de 27 pour un
+  budget d'entraînement comparable, chaque état est moins visité ; la
+  politique est plus diluée (écart 0,0105 \% contre 0,0074 \%). C'est la
+  « malédiction de la dimension » des représentations tabulaires, qui
+  motive l'approximation de fonction
+  \autocite{sutton_barto_2018,mnih_2015}.
+\end{itemize}
+
+\section{\texorpdfstring{E2 --- KP 0/1 de référence :
+\texttt{instances\_01\_KP} et Jooken et al.~(31 instances × 6 variantes
+× 10
+exécutions)}{E2 --- KP 0/1 de référence : instances\_01\_KP et Jooken et al.~(31 instances × 6 variantes × 10 exécutions)}}\label{analyse_resultats-e2-kp-01-de-ruxe9fuxe9rence-instances_01_kp-et-jooken-et-al.-31-instances-6-variantes-10-exuxe9cutions}
+
+Ce jeu réunit des instances de Pisinger et les instances difficiles de
+\textcite{jooken_2022}, conçues pour mettre en défaut les méthodes
+exactes.
+
+\textbf{Tableau 3 --- Écart moyen à l'optimum (\%)} (optimums fournis
+avec les instances) :
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Classe
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+AG standard
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Aléatoire
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+UCB1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+QL en ligne
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{QL pré-entraîné}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Oracle fixe
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+UC (n = 100\ldots2 000) & 0,0345 & \textbf{0,0184} & 0,0221 & 0,0190 &
+0,0222 & 0,0229 \\
+WC & 0,1904 & 0,1161 & 0,1571 & 0,1381 & \textbf{0,0827} & 0,1144 \\
+SC & 0,0232 & 0,0142 & \textbf{0,0001} & 0,0008 & \textbf{0,0001} &
+0,0139 \\
+Jooken (n = 400, 1 000) & 0,0012 & 0,0010 & 0,0010 & 0,0009 &
+\textbf{0,0008} & \textbf{0,0008} \\
+\textbf{Moyenne} & 0,0407 & 0,0245 & 0,0294 & 0,0259 & \textbf{0,0174} &
+0,0248 \\
+Rang moyen (Friedman) & 5,00 & 3,19 & 3,71 & 3,11 & \textbf{2,81} &
+3,18 \\
+\end{longtable}
+}
+
+Friedman : χ² = 40,07, p = 1,5·10⁻⁷ (N = 31, CD = 1,35).
+
+\begin{itemize}
+\tightlist
+\item
+  Le \textbf{QL pré-entraîné} obtient la \textbf{meilleure moyenne} et
+  le \textbf{meilleur rang} ; il bat significativement l'AG standard (p
+  Holm = 0,001, 5/26/0). Face aux autres variantes adaptatives, les
+  différences ne sont \textbf{pas significatives} sur ces 31 instances
+  (p Holm ≥ 0,21) : avec 5 instances par classe (tailles de 100 à 2 000
+  objets), la variance entre instances est forte, et les instances de
+  Jooken sont résolues à moins de 0,003 \% par toutes les variantes, ce
+  qui laisse peu de place aux différences. Le gain le plus net du
+  pré-entraînement porte sur la classe WC (0,083 \% contre 0,116--0,157
+  \% pour les autres variantes adaptatives).
+\item
+  \textbf{L'oracle n'est plus le meilleur} : UX + BF3, choisi sur les
+  instances de calibration générées, se classe au niveau de l'aléatoire
+  sur ce jeu (0,0248 \%). Une configuration fixe réglée sur une
+  distribution ne se transfère pas nécessairement ; la \textbf{politique
+  apprise}, qui varie les opérateurs selon l'état de la recherche, se
+  transfère mieux (0,0174 \%). Ce constat rejoint le théorème « pas de
+  repas gratuit » : aucun réglage fixe n'est meilleur sur toutes les
+  distributions d'instances \autocite{wolpert_macready_1997}.
+\item
+  \textbf{QL en ligne ≈ aléatoire} (p = 1,00), confirmant H2 sur un
+  second jeu.
+\end{itemize}
+
+\textbf{Le mur des méthodes exactes (instances de Jooken,
+\(C = 10^8\)).} Pour les 8 instances de capacité \(10^8\), la
+\textbf{programmation dynamique est infaisable} (vecteur de \(10^8\)
+réels ≈ 0,8 Go, table de reconstruction bien au-delà), et la
+\textbf{PLNE (HiGHS) ne termine pas} en 60 s sur 4 d'entre elles. Sur
+ces 4 instances, \textbf{toutes les variantes d'AG, en ≈ 7 s, font mieux
+que la PLNE en 60 s} :
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Instance (Jooken)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+AG standard
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+QL pré-entraîné
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+PLNE 60 s
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Glouton
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+n = 1 000, g = 10, s = 100 & 0,0007 & \textbf{0,0001} & 0,0003 &
+0,2464 \\
+n = 1 000, g = 10, s = 300 & 0,0021 & \textbf{0,0020} & 0,0253 &
+0,4662 \\
+n = 400, g = 10, s = 100 & 0,0027 & 0,0023 & 0,0092 & 1,0400 \\
+n = 400, g = 10, s = 300 & 0,0012 & \textbf{0,0011} & 0,0013 & 0,2244 \\
+\end{longtable}
+}
+
+(écarts en \%, moyenne de 10 exécutions pour les AG). C'est la situation
+où une métaheuristique garde tout son intérêt face aux méthodes exactes
+(H4), comme le soulignent les revues récentes sur le sac à dos
+\autocite{cacchiani_knapsack_2022-1,wilbaut_knapsack_2022}.
+
+\textbf{Figures associées} : \texttt{fig02\_e2\_ecart\_par\_classe},
+\texttt{fig02\_e2\_rangs\_friedman}, \texttt{fig02\_e2\_boites},
+\texttt{fig02\_e2\_convergence}, \texttt{fig02\_e2\_succes\_echecs},
+\texttt{fig02\_e2\_qualite\_temps}.
+
+\section{Cas d'usage réels (données synthétiques illustratives ; 5
+exécutions par variante
+d'AG)}\label{analyse_resultats-cas-dusage-ruxe9els-donnuxe9es-synthuxe9tiques-illustratives-5-exuxe9cutions-par-variante-dag}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 14\tabcolsep) * \real{0.1250}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Cas
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Glouton
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+PD
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+PLNE
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+AG standard
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Aléatoire
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+QL en ligne
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+QL pré-entraîné
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Budget communal (KP, n = 120) & 0,073 \% & non applicable (coûts
+décimaux) & \textbf{optimal, 0,07 s} & 0,003 \% & \textbf{0 \%} &
+\textbf{0 \%} & \textbf{0 \%} \\
+Camion humanitaire (MKP, m = 2, n = 250) & 2,05 \% & non applicable &
+\textbf{optimal, 0,3 s} & 0,096 \% & 0,070 \% & 0,061 \% & 0,061 \% \\
+Machines virtuelles (MKP, m = 3, n = 300) & 25,4 \% & non applicable &
+\textbf{optimal, 1,5 s} & \textbf{2,29 \%} & 4,05 \% & 2,84 \% & 3,36
+\% \\
+Portefeuille (KP corrélé, n = 400) & 0,173 \% & optimal, 0,17 s &
+optimal, 1,7 s & 0,0045 \% & 0,0019 \% & 0,0022 \% & \textbf{0,0014
+\%} \\
+\end{longtable}
+}
+
+Ces cas reprennent des applications classiques du sac à dos : sélection
+de projets sous contrainte budgétaire, chargement multi-ressources,
+allocation de ressources informatiques et choix de portefeuille
+\autocite{kellerer_knapsack_book_2004,vaezi_mean-var_2020,wilbaut_knapsack_2022}.
+
+\begin{itemize}
+\tightlist
+\item
+  Sur ces tailles modestes, la \textbf{PLNE} est la méthode de choix
+  (optimale en moins de 2 s).
+\item
+  Le \textbf{glouton} est très fragile en multidimensionnel (25 \%
+  d'écart sur les machines virtuelles), faute d'un ordre unique des
+  efficacités lorsque plusieurs ressources sont contraintes
+  \autocite{kellerer_multidimensional_2004}.
+\item
+  Le QL pré-entraîné est le meilleur des AG sur 3 cas sur 4 ; il
+  \textbf{échoue} sur les \textbf{machines virtuelles}, où l'AG
+  standard, moins disruptif, fait mieux (voir la discussion).
+\end{itemize}
+
+\section{E3 --- Sac à dos multidimensionnel, OR-Library (58 instances ×
+6 variantes × 10
+exécutions)}\label{analyse_resultats-e3-sac-uxe0-dos-multidimensionnel-or-library-58-instances-6-variantes-10-exuxe9cutions}
+
+Ce jeu, issu de l'OR-Library
+\autocite{beasley_orlib_1990,chu_beasley_1998}, teste le
+\textbf{transfert inter-problèmes} : la Q-table Q\_OOD, apprise sur le
+KP 0/1, est appliquée \textbf{sans modification} au MKP (\(m\) = 5 ou 10
+contraintes). Référence : optimum SAC-94 (\emph{weing}) ou meilleure
+valeur connue (PLNE 60 s ou meilleure exécution).
+
+\textbf{Tableau 4 --- Écart moyen à la référence (\%)} :
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Sous-ensemble
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+AG standard
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Aléatoire
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+UCB1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+QL en ligne
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+QL pré-entraîné
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Oracle fixe
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+PLNE 60 s
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Glouton
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+OR5x100 (30) & 0,252 & 0,164 & 0,161 & 0,173 & 0,159 & \textbf{0,127} &
+0,000 & 3,56 \\
+OR10x100 (10) & 0,808 & 0,578 & 0,588 & 0,606 & 0,629 & \textbf{0,526} &
+0,037 & 7,43 \\
+OR5x250 (10) & 0,345 & 0,229 & 0,224 & 0,230 & 0,211 & \textbf{0,184} &
+0,015 & 4,39 \\
+SAC-94 \emph{weing} (8) & 0,041 & \textbf{0,025} & 0,036 & 0,043 & 0,062
+& \textbf{0,025} & 0,000 & 2,11 \\
+\textbf{Moyenne} & 0,335 & 0,228 & 0,228 & 0,240 & 0,236 &
+\textbf{0,191} & --- & --- \\
+Rang moyen (Friedman) & 5,55 & 3,36 & 3,17 & 3,69 & 3,29 & \textbf{1,93}
+& --- & --- \\
+\end{longtable}
+}
+
+Friedman : χ² = 128,2, p = 5,7·10⁻²⁶ (N = 58, CD = 0,99). Temps moyen
+par exécution d'AG : ≈ 1,9 s.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{H1 confirmée sur le MKP} : toutes les variantes adaptatives
+  battent l'AG standard (QL pré-entraîné : p Holm \textless{} 10⁻⁵,
+  28/30/0 ; QL en ligne : 22/36/0).
+\item
+  \textbf{Le transfert inter-problèmes n'apporte pas de gain
+  supplémentaire} : QL pré-entraîné, aléatoire, UCB1 et QL en ligne ne
+  se distinguent pas (p Holm ≥ 0,41 ; seul UCB1 est très légèrement
+  meilleur que le QL en ligne, p = 0,037). La politique apprise sur le
+  KP 0/1 conserve la diversification mais ne capture pas la structure
+  multi-contraintes, que les travaux dédiés au MKP intègrent
+  explicitement dans l'état ou dans les caractéristiques de l'instance
+  \autocite{bushaj_k-means_2024,rezoug_application_2022,cacchiani_knapsack_2022}.
+  L'\textbf{oracle} (UX + BF3) reste significativement meilleur (0/51/7)
+  : le croisement uniforme est pertinent pour le MKP, mais la politique
+  transférée l'utilise moins systématiquement (en phase intermédiaire
+  notamment).
+\item
+  \textbf{Méthodes exactes} : la PLNE (HiGHS) prouve l'optimalité sur 38
+  instances et atteint sa limite de 60 s sur 20 (9 OR10x100, 10 OR5x250,
+  1 OR5x100), avec un écart résiduel de 0,015 à 0,037 \%. À ces tailles,
+  \textbf{la PLNE en 60 s reste nettement meilleure que l'AG en ≈ 2 s} ;
+  l'AG offre un compromis qualité/temps (0,2 \% en 2 s) et le
+  \textbf{glouton} est très médiocre en multidimensionnel (2 à 7 \%).
+\end{itemize}
+
+\textbf{Figures associées} : \texttt{fig03\_e3\_ecart\_par\_classe},
+\texttt{fig03\_e3\_rangs\_friedman}, \texttt{fig03\_e3\_succes\_echecs},
+\texttt{fig03\_e3\_qualite\_temps}.
+
+\section{E5 --- Passage à l'échelle (classes UC et SC, n = 100 à 10 000,
+3
+graines)}\label{analyse_resultats-e5-passage-uxe0-luxe9chelle-classes-uc-et-sc-n-100-uxe0-10-000-3-graines}
+
+\textbf{Tableau 5 --- Temps moyen (s) et écart à la meilleure valeur
+trouvée (\%)} (budget de l'AG fixe : 200 générations × 100 individus) :
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Classe
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+n
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+PD
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+PLNE
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Glouton
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+AG standard
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+QL pré-entraîné
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+SC & 1 000 & 1,2 s · 0 \% & 80 s* · 0 \% & 0,01 s · 0,134 \% & 2,5 s ·
+0,166 \% & 3,0 s · \textbf{0,021 \%} \\
+SC & 2 000 & 5,8 s · 0 \% & 120 s* · 0 \% & 0,01 s · 0,080 \% & 5,5 s ·
+0,270 \% & 5,9 s · \textbf{0,036 \%} \\
+SC & 10 000 & infaisable & 120 s* · 0 \% & 0,06 s · \textbf{0,017 \%} &
+15,8 s · 1,170 \% & 21,9 s · 0,365 \% \\
+UC & 1 000 & 1,5 s · 0 \% & 0,5 s · 0 \% & 0,01 s · 0,011 \% & 4,1 s ·
+0,005 \% & 4,5 s · \textbf{0,002 \%} \\
+UC & 10 000 & infaisable & 33 s · 0 \% & 0,06 s · \textbf{0,0001 \%} &
+36 s · 6,25 \% & 40 s · 1,44 \% \\
+\end{longtable}
+}
+
+* limite de temps atteinte sans preuve d'optimalité. « Infaisable » :
+\(n \cdot C > 3 \cdot 10^9\) opérations (garde-fou ; la PD dépasserait
+plusieurs minutes et plusieurs gigaoctets pour reconstruire la
+solution).
+
+\begin{itemize}
+\tightlist
+\item
+  La \textbf{PD} croît en \(O(nC)\), soit \(O(n^2)\) ici
+  (\(C \propto n\)) : 6 s à n = 2 000, hors de portée au-delà de 5 000.
+  Elle est pseudo-polynomiale : le KP 0/1 n'est NP-difficile qu'au sens
+  faible \autocite{garey_johnson_1979,kellerer_improved_2004}.
+\item
+  La \textbf{PLNE} trouve la meilleure valeur à toutes les tailles, mais
+  \textbf{ne prouve plus l'optimalité} sur la classe SC dès n = 500
+  (limite de 80--120 s).
+\item
+  À budget fixe, \textbf{l'AG se dégrade avec la taille} ; le \textbf{QL
+  pré-entraîné reste 3 à 8 fois meilleur que l'AG standard} jusqu'à n =
+  10 000 --- soit 50 fois la taille des instances d'entraînement : le
+  transfert en taille fonctionne.
+\item
+  \textbf{Échec à grande échelle} : à n ≥ 5 000, le \textbf{glouton}
+  (0,06 s) fait mieux que toutes les variantes d'AG : avec 200
+  générations et une population initiale aléatoire, l'AG n'a pas le
+  temps de converger sur 10 000 variables, alors que la solution
+  gloutonne est quasi optimale lorsque n est grand (\(C\) grand devant
+  chaque poids), propriété liée à la borne de Dantzig
+  \autocite{dantzig_1957,martello_toth_1990}. Remèdes évidents, non
+  testés faute de temps : \textbf{initialisation gloutonne} d'une partie
+  de la population (option \texttt{init\_greedy\_fraction} déjà
+  implémentée) et \textbf{budget proportionnel à n}.
+\end{itemize}
+
+\textbf{Figures associées} : \texttt{fig07\_scalabilite}.
+
+\printbibliography[title=Bibliographie]
+
+\end{document}

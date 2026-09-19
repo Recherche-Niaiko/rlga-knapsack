@@ -1,0 +1,29 @@
+cas,modèle,n,m,méthode,valeur moyenne,meilleure,écart moyen (%),temps moyen (s),statut
+budget_communal,KP,120,1,Glouton étendu,1785.9,1785.9,0.0727394807520245,0.0016474160001962446,heuristique
+budget_communal,KP,120,1,Programmation dynamique,,,,,infaisable : PD nécessite des poids entiers
+budget_communal,KP,120,1,"PLNE (HiGHS, Branch-and-Cut)",1787.2000000000003,1787.2000000000003,0.0,0.06605848699837225,optimal
+budget_communal,KP,120,1,AG standard (1P + BF 1/n),1787.1400000000006,1787.2000000000003,0.0033572068039233465,1.234129065399611,graine 4
+budget_communal,KP,120,1,AG opérateurs aléatoires,1787.2000000000003,1787.2000000000003,0.0,1.3842603535988018,graine 4
+budget_communal,KP,120,1,AG + Q-learning (en ligne),1787.2000000000003,1787.2000000000003,0.0,1.4141873182015843,graine 4
+budget_communal,KP,120,1,AG + Q-learning pré-entraîné,1787.2,1787.2000000000003,1.2722340837244406e-14,1.3575218247999146,graine 4
+camion_humanitaire,MKP,250,2,Glouton étendu,2745.6000000000004,2745.6000000000004,2.054794520547942,0.0028087049977330025,heuristique
+camion_humanitaire,MKP,250,2,Programmation dynamique,,,,,infaisable : PD non applicable au MKP (table m-dimensionnelle)
+camion_humanitaire,MKP,250,2,"PLNE (HiGHS, Branch-and-Cut)",2803.2000000000003,2803.2000000000003,0.0,0.31704641400210676,optimal
+camion_humanitaire,MKP,250,2,AG standard (1P + BF 1/n),2800.52,2801.5,0.09560502283106061,3.3540474862005794,graine 4
+camion_humanitaire,MKP,250,2,AG opérateurs aléatoires,2801.2400000000002,2801.5000000000005,0.06992009132420221,3.742577061001066,graine 4
+camion_humanitaire,MKP,250,2,AG + Q-learning (en ligne),2801.5,2801.5000000000005,0.0606449771689595,3.4494877277997147,graine 4
+camion_humanitaire,MKP,250,2,AG + Q-learning pré-entraîné,2801.5,2801.5000000000005,0.0606449771689595,4.435643877000257,graine 4
+placement_vm_cloud,MKP,300,3,Glouton étendu,5480.6900000000005,5480.6900000000005,25.442222956823144,0.003183376000379212,heuristique
+placement_vm_cloud,MKP,300,3,Programmation dynamique,,,,,infaisable : PD non applicable au MKP (table m-dimensionnelle)
+placement_vm_cloud,MKP,300,3,"PLNE (HiGHS, Branch-and-Cut)",7350.93,7350.93,0.0,1.529185540999606,optimal
+placement_vm_cloud,MKP,300,3,AG standard (1P + BF 1/n),7182.402,7254.88,2.2926078741057285,3.3705962629996065,graine 4
+placement_vm_cloud,MKP,300,3,AG opérateurs aléatoires,7053.464000000002,7075.5,4.046644438186712,3.5310721500005458,graine 4
+placement_vm_cloud,MKP,300,3,AG + Q-learning (en ligne),7141.932000000001,7177.83,2.843150458513407,3.8283192615999724,graine 4
+placement_vm_cloud,MKP,300,3,AG + Q-learning pré-entraîné,7104.270000000001,7200.24,3.3554937946627015,3.649141143199813,graine 4
+portefeuille,KP,400,1,Glouton étendu,90067.1,90067.1,0.1726834318116769,0.005319159998180112,heuristique
+portefeuille,KP,400,1,Programmation dynamique,90222.90000000002,90222.90000000002,0.0,0.16851857299843687,optimal
+portefeuille,KP,400,1,"PLNE (HiGHS, Branch-and-Cut)",90222.9,90222.9,3.225769783140832e-14,1.6657095510017825,optimal
+portefeuille,KP,400,1,AG standard (1P + BF 1/n),90218.8,90221.40000000001,0.004544300837171463,3.2368817998009036,graine 4
+portefeuille,KP,400,1,AG opérateurs aléatoires,90221.16,90222.7,0.0019285569406656071,3.1910795359995974,graine 4
+portefeuille,KP,400,1,AG + Q-learning (en ligne),90220.93999999999,90222.1,0.0021723974734080883,3.7378353676002005,graine 4
+portefeuille,KP,400,1,AG + Q-learning pré-entraîné,90221.63999999998,90222.9,0.0013965412329224806,4.370492882600229,graine 4

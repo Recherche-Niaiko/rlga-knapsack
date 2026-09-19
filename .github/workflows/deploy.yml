@@ -1,0 +1,53 @@
+# SPDX-License-Identifier: MIT
+# Déploiement, uniquement lorsque les tests (workflow « Tests rapides ») ont réussi sur main, ou à la demande :
+#   1. application interactive (image Docker) sur Render, par son « deploy hook » ;
+#   2. page vitrine statique (dossier vitrine/) sur un Space Hugging Face « Static » (offre gratuite).
+# Prérequis (Settings → Secrets and variables → Actions) :
+#   secrets RENDER_DEPLOY_HOOK et HF_TOKEN ; variable HF_SPACE (ex. Recherche-Niaiko/rlga-knapsack).
+name: Déploiement
+
+on:
+  workflow_run:
+    workflows: ["Tests rapides"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  application:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Déclencher le déploiement Render de la version testée
+        env:
+          HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+          SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
+        run: |
+          if [ -z "$HOOK" ]; then echo "Secret RENDER_DEPLOY_HOOK absent : étape ignorée."; exit 0; fi
+          curl --fail --silent --show-error -X POST "${HOOK}&ref=${SHA}"
+
+  vitrine:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Envoi de la page vitrine vers le Space Hugging Face (Static)
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_SPACE: ${{ vars.HF_SPACE }}
+        run: |
+          if [ -z "$HF_TOKEN" ] || [ -z "$HF_SPACE" ]; then echo "HF_TOKEN ou HF_SPACE absent : étape ignorée."; exit 0; fi
+          pip install --quiet huggingface_hub
+          python - <<'PY'
+          import os
+          from huggingface_hub import HfApi
+          version = open("VERSION").read().strip()
+          HfApi(token=os.environ["HF_TOKEN"]).upload_folder(
+              folder_path="vitrine", repo_id=os.environ["HF_SPACE"], repo_type="space",
+              commit_message=f"Page vitrine v{version}")
+          PY

@@ -1,0 +1,33 @@
+# SPDX-License-Identifier: MIT
+# Plan Render (« Blueprint ») : application interactive sur l'offre gratuite (512 Mo, 0,1 processeur).
+# Le déploiement est déclenché par l'action GitHub « Déploiement » après la réussite des tests (deploy hook).
+services:
+  - type: web
+    name: rlga-knapsack
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    autoDeploy: false
+    healthCheckPath: /
+    envVars:
+      - key: RLGA_N_MAX              # instances plus petites : la mémoire du service est limitée à 512 Mo
+        value: "2000"
+      - key: RLGA_EXECUTIONS_MAX
+        value: "5"
+      - key: RLGA_GENERATIONS_MAX
+        value: "300"
+      - key: RLGA_MEMOIRE_MO         # mémoire virtuelle (plancher 1 024) ; la mémoire réelle d'un calcul reste < 250 Mo
+        value: "1024"
+      - key: RLGA_FACTEUR_MACHINE    # 0,1 processeur : calculs ≈ 20 fois plus lents qu'en local (mesuré)
+        value: "20"
+      - key: RLGA_N_DEFAUT           # réglages initiaux de la page « Comparaison » : ≈ 1 min au lieu de 7
+        value: "200"
+      - key: RLGA_EXECUTIONS_DEFAUT
+        value: "2"
+      - key: RLGA_GENERATIONS_DEFAUT
+        value: "100"
+      - key: RLGA_ESTIMATION_MAX_S
+        value: "300"
+      - key: RLGA_DUREE_MAX_S
+        value: "600"

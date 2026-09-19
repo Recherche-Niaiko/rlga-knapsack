@@ -1,0 +1,11 @@
+**Temps moyen par exécution (s) — e1_kp01_generes**
+
+| method                          |   temps moyen (s) |
+|:--------------------------------|------------------:|
+| AG standard                     |              3.98 |
+| AG op. aléatoires               |              4.51 |
+| AG + UCB1                       |              4.53 |
+| AG + QL (en ligne)              |              4.54 |
+| AG + QL pré-entraîné            |              4.58 |
+| AG + QL pré-entraîné + φ(I)     |              4.40 |
+| Meilleure config. fixe (oracle) |              4.76 |

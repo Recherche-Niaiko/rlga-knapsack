@@ -1,0 +1,251 @@
+id,lot,poids (kg),volume (m3),personnes aidées,priorité (1-10),utilité
+L001,Comprimés de purification (carton) ×2,18.2,0.045,8,9,7.4
+L002,Tente familiale ×4,128.3,0.68,12,6,6.4
+L003,Bâche de protection ×1,8.5,0.039,8,7,5.4
+L004,Kit médical d'urgence ×3,35.8,0.165,27,10,27.0
+L005,Aliment thérapeutique (carton) ×2,26.3,0.065,18,10,18.6
+L006,Kit d'hygiène ×1,6.6,0.028,8,6,4.4
+L007,Bâche de protection ×4,30.9,0.149,28,7,21.0
+L008,Tente familiale ×3,96.5,0.5,15,6,9.2
+L009,Aliment thérapeutique (carton) ×5,70.2,0.144,50,10,48.8
+L010,Bidon d'eau 20 L ×2,36.0,0.05,18,8,14.0
+L011,Couvertures (lot de 10) ×4,56.3,0.537,44,5,24.2
+L012,Bâche de protection ×1,8.6,0.039,10,7,7.7
+L013,Bidon d'eau 20 L ×2,39.2,0.047,22,8,15.4
+L014,Couvertures (lot de 10) ×1,13.5,0.123,11,5,6.1
+L015,Sac de riz 50 kg ×1,51.0,0.072,4,9,3.8
+L016,Aliment thérapeutique (carton) ×5,74.1,0.157,50,10,47.7
+L017,Kit médical d'urgence ×1,11.2,0.056,9,10,10.1
+L018,Bâche de protection ×5,36.5,0.194,25,7,16.9
+L019,Bidon d'eau 20 L ×1,19.7,0.027,4,8,3.2
+L020,Kit médical d'urgence ×1,11.3,0.052,11,10,12.6
+L021,Kit cuisine ×3,33.6,0.187,21,5,11.2
+L022,Bidon d'eau 20 L ×5,108.5,0.131,55,8,42.1
+L023,Jerrycan pliable (lot) ×4,30.5,0.229,20,6,13.6
+L024,Bâche de protection ×1,8.6,0.038,9,7,7.2
+L025,Bidon d'eau 20 L ×4,74.7,0.104,40,8,34.2
+L026,Bidon d'eau 20 L ×2,40.6,0.056,16,8,13.8
+L027,Couvertures (lot de 10) ×1,15.8,0.124,4,5,1.9
+L028,Kit d'hygiène ×5,32.2,0.168,35,6,18.5
+L029,Sac de riz 50 kg ×3,160.3,0.221,33,9,30.6
+L030,Tente familiale ×2,70.0,0.309,10,6,6.7
+L031,Lampe solaire (carton) ×2,17.0,0.087,20,4,8.0
+L032,Couvertures (lot de 10) ×1,15.5,0.128,11,5,6.2
+L033,Bidon d'eau 20 L ×4,87.3,0.106,28,8,21.0
+L034,Lampe solaire (carton) ×3,27.2,0.11,15,4,5.4
+L035,Comprimés de purification (carton) ×4,41.4,0.073,40,9,37.3
+L036,Bidon d'eau 20 L ×1,20.4,0.023,6,8,5.3
+L037,Kit d'hygiène ×2,11.7,0.061,22,6,15.1
+L038,Lampe solaire (carton) ×1,8.4,0.037,4,4,1.7
+L039,Lampe solaire (carton) ×2,19.5,0.073,20,4,8.6
+L040,Comprimés de purification (carton) ×3,29.4,0.066,21,9,19.0
+L041,Couvertures (lot de 10) ×5,71.1,0.63,20,5,11.2
+L042,Lampe solaire (carton) ×5,47.8,0.214,15,4,6.6
+L043,Comprimés de purification (carton) ×4,39.6,0.088,24,9,18.7
+L044,Bâche de protection ×2,17.0,0.089,18,7,12.4
+L045,Lampe solaire (carton) ×4,37.5,0.156,36,4,16.4
+L046,Aliment thérapeutique (carton) ×4,53.5,0.126,24,10,26.7
+L047,Sac de riz 50 kg ×4,218.8,0.317,28,9,26.8
+L048,Kit cuisine ×3,32.0,0.198,12,5,5.8
+L049,Bâche de protection ×2,14.6,0.076,6,7,4.7
+L050,Comprimés de purification (carton) ×4,42.3,0.075,24,9,23.7
+L051,Couvertures (lot de 10) ×5,75.0,0.608,35,5,16.1
+L052,Tente familiale ×5,189.6,0.855,55,6,36.9
+L053,Kit cuisine ×3,34.2,0.186,9,5,5.2
+L054,Bâche de protection ×5,38.0,0.226,15,7,11.9
+L055,Bâche de protection ×2,17.6,0.088,12,7,8.6
+L056,Aliment thérapeutique (carton) ×4,50.5,0.119,24,10,23.1
+L057,Kit cuisine ×1,10.1,0.058,10,5,5.4
+L058,Couvertures (lot de 10) ×4,60.5,0.528,32,5,17.7
+L059,Sac de riz 50 kg ×3,153.2,0.237,9,9,8.4
+L060,Sac de riz 50 kg ×3,147.8,0.228,27,9,26.8
+L061,Kit d'hygiène ×4,24.2,0.13,44,6,25.5
+L062,Kit cuisine ×5,59.9,0.305,15,5,7.0
+L063,Kit d'hygiène ×2,11.8,0.063,22,6,12.7
+L064,Comprimés de purification (carton) ×4,43.8,0.072,12,9,12.2
+L065,Couvertures (lot de 10) ×1,15.0,0.132,3,5,1.6
+L066,Lampe solaire (carton) ×3,29.0,0.127,9,4,4.1
+L067,Kit médical d'urgence ×5,63.1,0.275,25,10,26.6
+L068,Jerrycan pliable (lot) ×1,7.0,0.052,8,6,5.0
+L069,Kit médical d'urgence ×4,43.2,0.187,36,10,33.7
+L070,Couvertures (lot de 10) ×5,82.4,0.58,45,5,24.6
+L071,Bâche de protection ×2,16.7,0.074,16,7,11.3
+L072,Lampe solaire (carton) ×2,16.6,0.082,20,4,8.9
+L073,Jerrycan pliable (lot) ×4,26.1,0.223,44,6,23.0
+L074,Kit d'hygiène ×5,31.7,0.167,15,6,10.0
+L075,Kit médical d'urgence ×4,51.8,0.226,20,10,20.8
+L076,Comprimés de purification (carton) ×3,30.1,0.058,33,9,33.6
+L077,Comprimés de purification (carton) ×1,10.2,0.023,4,9,3.7
+L078,Kit cuisine ×3,31.5,0.187,21,5,11.3
+L079,Jerrycan pliable (lot) ×3,22.1,0.171,21,6,13.4
+L080,Lampe solaire (carton) ×2,18.2,0.078,20,4,8.7
+L081,Kit d'hygiène ×5,32.9,0.136,30,6,15.6
+L082,Comprimés de purification (carton) ×4,39.8,0.076,28,9,29.0
+L083,Kit médical d'urgence ×4,46.9,0.22,20,10,18.7
+L084,Kit d'hygiène ×2,12.5,0.066,18,6,10.4
+L085,Kit d'hygiène ×1,5.9,0.033,11,6,7.4
+L086,Tente familiale ×5,168.5,0.832,55,6,37.9
+L087,Bâche de protection ×2,14.4,0.075,20,7,15.3
+L088,Aliment thérapeutique (carton) ×1,15.2,0.029,5,10,5.3
+L089,Lampe solaire (carton) ×1,9.5,0.037,4,4,1.5
+L090,Lampe solaire (carton) ×3,29.1,0.118,24,4,10.9
+L091,Bâche de protection ×3,23.5,0.114,18,7,10.9
+L092,Sac de riz 50 kg ×5,225.4,0.372,50,9,46.5
+L093,Aliment thérapeutique (carton) ×3,41.7,0.082,27,10,28.6
+L094,Kit d'hygiène ×1,6.0,0.03,11,6,7.3
+L095,Kit d'hygiène ×1,6.1,0.034,6,6,3.4
+L096,Couvertures (lot de 10) ×5,76.1,0.672,30,5,16.0
+L097,Couvertures (lot de 10) ×2,29.3,0.254,22,5,9.7
+L098,Lampe solaire (carton) ×2,18.9,0.075,16,4,6.9
+L099,Tente familiale ×1,32.1,0.156,4,6,2.5
+L100,Aliment thérapeutique (carton) ×3,38.6,0.094,24,10,24.1
+L101,Sac de riz 50 kg ×1,52.7,0.067,5,9,4.4
+L102,Couvertures (lot de 10) ×1,16.1,0.131,9,5,4.1
+L103,Tente familiale ×2,69.0,0.297,20,6,12.2
+L104,Kit cuisine ×3,33.7,0.179,21,5,11.6
+L105,Tente familiale ×4,148.3,0.689,32,6,20.1
+L106,Kit cuisine ×3,33.9,0.205,27,5,13.1
+L107,Comprimés de purification (carton) ×2,18.3,0.045,12,9,12.1
+L108,Sac de riz 50 kg ×4,219.7,0.261,24,9,19.9
+L109,Lampe solaire (carton) ×4,35.2,0.162,32,4,11.5
+L110,Kit d'hygiène ×2,12.2,0.066,20,6,11.5
+L111,Kit cuisine ×3,35.7,0.203,9,5,4.7
+L112,Lampe solaire (carton) ×2,17.4,0.083,6,4,2.4
+L113,Tente familiale ×2,72.8,0.288,18,6,9.9
+L114,Tente familiale ×3,104.9,0.487,27,6,15.7
+L115,Lampe solaire (carton) ×2,18.5,0.091,10,4,3.4
+L116,Kit cuisine ×5,51.8,0.296,15,5,6.7
+L117,Jerrycan pliable (lot) ×5,33.4,0.254,40,6,22.6
+L118,Bidon d'eau 20 L ×4,78.7,0.092,28,8,24.1
+L119,Aliment thérapeutique (carton) ×5,66.3,0.143,15,10,14.8
+L120,Aliment thérapeutique (carton) ×5,63.7,0.172,15,10,16.0
+L121,Aliment thérapeutique (carton) ×3,39.1,0.101,18,10,17.1
+L122,Kit médical d'urgence ×4,51.1,0.181,40,10,40.6
+L123,Lampe solaire (carton) ×2,19.7,0.078,22,4,9.2
+L124,Bâche de protection ×4,32.9,0.166,44,7,27.3
+L125,Sac de riz 50 kg ×2,106.0,0.131,22,9,22.5
+L126,Jerrycan pliable (lot) ×2,13.4,0.113,16,6,10.5
+L127,Kit médical d'urgence ×4,44.6,0.211,28,10,25.7
+L128,Aliment thérapeutique (carton) ×4,55.4,0.132,20,10,17.6
+L129,Kit cuisine ×4,44.7,0.259,12,5,6.8
+L130,Bidon d'eau 20 L ×4,85.2,0.09,16,8,13.6
+L131,Kit médical d'urgence ×2,23.4,0.112,8,10,8.1
+L132,Kit médical d'urgence ×2,21.7,0.107,16,10,18.2
+L133,Comprimés de purification (carton) ×3,32.1,0.057,21,9,17.5
+L134,Comprimés de purification (carton) ×2,20.5,0.036,8,9,8.3
+L135,Kit cuisine ×4,42.0,0.252,36,5,18.9
+L136,Sac de riz 50 kg ×5,265.4,0.326,50,9,40.2
+L137,Couvertures (lot de 10) ×4,57.4,0.544,12,5,6.1
+L138,Comprimés de purification (carton) ×4,43.1,0.081,36,9,33.0
+L139,Tente familiale ×1,38.0,0.169,8,6,4.6
+L140,Sac de riz 50 kg ×2,101.7,0.137,22,9,18.9
+L141,Comprimés de purification (carton) ×4,41.5,0.075,16,9,15.8
+L142,Couvertures (lot de 10) ×3,46.8,0.397,30,5,15.8
+L143,Comprimés de purification (carton) ×5,48.6,0.092,15,9,13.9
+L144,Bidon d'eau 20 L ×5,106.8,0.118,15,8,13.1
+L145,Aliment thérapeutique (carton) ×2,25.8,0.06,8,10,7.3
+L146,Sac de riz 50 kg ×1,54.8,0.071,4,9,3.7
+L147,Bidon d'eau 20 L ×1,18.2,0.026,9,8,6.8
+L148,Kit médical d'urgence ×4,50.5,0.227,16,10,15.4
+L149,Aliment thérapeutique (carton) ×2,26.8,0.057,14,10,15.4
+L150,Bâche de protection ×4,34.0,0.146,12,7,8.5
+L151,Sac de riz 50 kg ×4,193.6,0.313,44,9,41.3
+L152,Aliment thérapeutique (carton) ×4,51.9,0.126,24,10,21.9
+L153,Lampe solaire (carton) ×5,48.4,0.205,55,4,23.5
+L154,Kit cuisine ×5,51.2,0.302,30,5,15.0
+L155,Tente familiale ×4,145.2,0.548,40,6,21.9
+L156,Jerrycan pliable (lot) ×5,32.1,0.256,25,6,16.9
+L157,Lampe solaire (carton) ×4,35.9,0.178,12,4,4.9
+L158,Jerrycan pliable (lot) ×4,30.7,0.181,40,6,24.6
+L159,Lampe solaire (carton) ×4,36.3,0.156,28,4,12.5
+L160,Bâche de protection ×2,14.8,0.087,20,7,14.8
+L161,Bidon d'eau 20 L ×3,58.8,0.074,24,8,18.9
+L162,Kit cuisine ×4,45.8,0.275,36,5,19.0
+L163,Kit cuisine ×1,10.4,0.063,11,5,5.4
+L164,Sac de riz 50 kg ×3,140.4,0.191,15,9,11.5
+L165,Kit médical d'urgence ×1,13.1,0.049,10,10,8.8
+L166,Jerrycan pliable (lot) ×1,7.0,0.053,8,6,5.3
+L167,Kit cuisine ×2,22.7,0.114,10,5,5.1
+L168,Aliment thérapeutique (carton) ×5,67.1,0.14,15,10,16.1
+L169,Bidon d'eau 20 L ×3,60.3,0.079,15,8,13.7
+L170,Kit médical d'urgence ×3,37.1,0.141,27,10,26.0
+L171,Kit médical d'urgence ×2,25.0,0.092,16,10,17.4
+L172,Bidon d'eau 20 L ×4,76.8,0.093,24,8,16.8
+L173,Jerrycan pliable (lot) ×3,20.8,0.171,33,6,18.1
+L174,Lampe solaire (carton) ×1,8.1,0.043,9,4,3.4
+L175,Aliment thérapeutique (carton) ×4,61.1,0.138,24,10,20.9
+L176,Comprimés de purification (carton) ×2,19.1,0.037,6,9,5.1
+L177,Jerrycan pliable (lot) ×5,33.7,0.246,40,6,25.9
+L178,Aliment thérapeutique (carton) ×4,56.0,0.125,20,10,21.3
+L179,Bidon d'eau 20 L ×1,21.0,0.023,4,8,3.6
+L180,Lampe solaire (carton) ×3,28.5,0.12,12,4,4.4
+L181,Comprimés de purification (carton) ×3,28.1,0.061,12,9,11.7
+L182,Lampe solaire (carton) ×1,9.7,0.041,10,4,4.5
+L183,Tente familiale ×5,174.6,0.696,25,6,16.1
+L184,Kit médical d'urgence ×2,22.5,0.112,16,10,16.7
+L185,Kit médical d'urgence ×1,12.8,0.051,8,10,8.1
+L186,Kit médical d'urgence ×4,52.6,0.214,28,10,26.1
+L187,Bidon d'eau 20 L ×3,55.3,0.074,33,8,25.6
+L188,Aliment thérapeutique (carton) ×1,13.5,0.032,10,10,8.7
+L189,Sac de riz 50 kg ×1,49.1,0.079,8,9,6.6
+L190,Kit cuisine ×2,20.0,0.127,10,5,5.7
+L191,Sac de riz 50 kg ×4,210.2,0.279,32,9,28.7
+L192,Aliment thérapeutique (carton) ×2,26.6,0.065,18,10,16.6
+L193,Sac de riz 50 kg ×2,95.7,0.141,10,9,9.3
+L194,Kit d'hygiène ×3,17.0,0.098,24,6,15.1
+L195,Aliment thérapeutique (carton) ×5,75.1,0.17,55,10,61.7
+L196,Jerrycan pliable (lot) ×4,30.6,0.198,44,6,23.5
+L197,Kit cuisine ×5,52.9,0.335,15,5,7.8
+L198,Jerrycan pliable (lot) ×5,36.1,0.278,25,6,13.5
+L199,Kit d'hygiène ×5,31.3,0.17,25,6,16.8
+L200,Kit médical d'urgence ×5,62.7,0.283,20,10,20.3
+L201,Sac de riz 50 kg ×1,54.6,0.073,3,9,3.0
+L202,Bâche de protection ×3,26.1,0.127,30,7,19.2
+L203,Couvertures (lot de 10) ×3,45.1,0.37,15,5,7.0
+L204,Sac de riz 50 kg ×2,91.8,0.139,10,9,8.9
+L205,Kit d'hygiène ×4,24.1,0.122,28,6,15.5
+L206,Bidon d'eau 20 L ×5,93.0,0.121,25,8,19.4
+L207,Sac de riz 50 kg ×2,95.1,0.153,6,9,5.2
+L208,Kit médical d'urgence ×3,37.9,0.162,30,10,30.7
+L209,Sac de riz 50 kg ×1,53.6,0.074,4,9,3.3
+L210,Jerrycan pliable (lot) ×5,37.8,0.245,20,6,13.7
+L211,Bidon d'eau 20 L ×4,75.6,0.106,24,8,21.0
+L212,Kit médical d'urgence ×1,12.6,0.049,8,10,6.9
+L213,Couvertures (lot de 10) ×3,47.0,0.406,21,5,10.4
+L214,Bâche de protection ×5,38.0,0.214,50,7,39.0
+L215,Bidon d'eau 20 L ×4,73.9,0.106,12,8,9.0
+L216,Sac de riz 50 kg ×4,208.6,0.267,40,9,38.1
+L217,Tente familiale ×3,111.5,0.481,15,6,9.6
+L218,Aliment thérapeutique (carton) ×2,27.9,0.055,6,10,5.6
+L219,Sac de riz 50 kg ×2,99.4,0.138,8,9,8.0
+L220,Kit d'hygiène ×3,17.9,0.095,9,6,4.9
+L221,Sac de riz 50 kg ×3,145.3,0.234,30,9,23.4
+L222,Sac de riz 50 kg ×2,104.2,0.157,14,9,12.6
+L223,Lampe solaire (carton) ×5,46.5,0.228,50,4,22.4
+L224,Tente familiale ×2,75.3,0.319,6,6,3.2
+L225,Jerrycan pliable (lot) ×1,6.5,0.051,9,6,5.3
+L226,Sac de riz 50 kg ×5,227.2,0.325,20,9,15.8
+L227,Couvertures (lot de 10) ×5,77.4,0.636,20,5,10.2
+L228,Jerrycan pliable (lot) ×1,7.2,0.051,11,6,7.0
+L229,Tente familiale ×3,98.5,0.411,9,6,5.2
+L230,Jerrycan pliable (lot) ×2,13.8,0.092,20,6,12.2
+L231,Aliment thérapeutique (carton) ×1,14.6,0.03,7,10,6.2
+L232,Aliment thérapeutique (carton) ×2,25.9,0.068,6,10,5.6
+L233,Aliment thérapeutique (carton) ×3,41.1,0.086,21,10,21.6
+L234,Bidon d'eau 20 L ×2,43.7,0.055,14,8,12.3
+L235,Bâche de protection ×1,7.9,0.036,11,7,7.1
+L236,Tente familiale ×4,132.6,0.553,24,6,16.4
+L237,Tente familiale ×3,104.1,0.492,15,6,9.9
+L238,Couvertures (lot de 10) ×5,67.8,0.613,50,5,21.5
+L239,Lampe solaire (carton) ×2,17.5,0.088,6,4,2.5
+L240,Kit d'hygiène ×3,19.2,0.099,21,6,11.0
+L241,Comprimés de purification (carton) ×4,37.2,0.085,12,9,9.4
+L242,Sac de riz 50 kg ×5,268.0,0.355,55,9,45.2
+L243,Kit cuisine ×2,21.1,0.119,12,5,5.7
+L244,Sac de riz 50 kg ×3,136.6,0.235,9,9,8.5
+L245,Aliment thérapeutique (carton) ×4,58.0,0.117,40,10,44.6
+L246,Lampe solaire (carton) ×2,17.7,0.09,22,4,9.4
+L247,Jerrycan pliable (lot) ×2,14.2,0.097,18,6,10.8
+L248,Kit d'hygiène ×3,16.3,0.088,24,6,13.9
+L249,Aliment thérapeutique (carton) ×2,29.2,0.057,16,10,17.6
+L250,Lampe solaire (carton) ×5,42.1,0.191,55,4,20.5

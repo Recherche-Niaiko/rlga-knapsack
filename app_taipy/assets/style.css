@@ -1,0 +1,181 @@
+/* Feuille de style de l'application — thèmes clair et sombre (variables --color-* du Stylekit).
+   Police : Montserrat (SIL Open Font License, fichiers locaux dans fonts/ : fonctionne hors ligne).
+   Textes descriptifs : font: 19px / 23px Montserrat, sans-serif. */
+
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 400; font-display: swap;
+             src: url("fonts/montserrat-400.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 500; font-display: swap;
+             src: url("fonts/montserrat-500.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 600; font-display: swap;
+             src: url("fonts/montserrat-600.woff2") format("woff2"); }
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 700; font-display: swap;
+             src: url("fonts/montserrat-700.woff2") format("woff2"); }
+
+:root {
+  --font-desc: 19px / 23px Montserrat, sans-serif;
+  --page-max: 1240px;
+  --gutter: 32px;
+  --line: rgba(128, 128, 128, 0.22);
+  --soft: rgba(128, 128, 128, 0.08);
+  --best-bg: rgba(27, 175, 122, 0.20);
+  --best-fg: #0b7a52;
+}
+@media (prefers-color-scheme: dark) { :root { --best-fg: #5fdcaa; } }
+.taipy-dark, [data-theme="dark"], body.dark { --best-fg: #5fdcaa; }
+
+body, .MuiTypography-root, .MuiButtonBase-root, .MuiInputBase-root, .MuiTableCell-root, .MuiTab-root,
+.MuiFormControlLabel-label, .MuiAccordionSummary-content, .MuiToggleButton-root, .MuiMenuItem-root {
+  font-family: Montserrat, sans-serif !important;
+}
+html { scroll-behavior: smooth; }
+
+/* ── Conteneur de page : largeur de lecture confortable, centré ─────────────────────────── */
+.app-header, #root main > div, .taipy-page-content, .tp-page { box-sizing: border-box; }
+.app-header { max-width: calc(var(--page-max) + 2 * var(--gutter)); margin: 0 auto;
+               padding: 18px var(--gutter) 0 var(--gutter); }
+[class*="taipy-part"]:has(> .hero), .page-body { max-width: var(--page-max); }
+#root .MuiBox-root > main, #root main { max-width: calc(var(--page-max) + 2 * var(--gutter)); margin: 0 auto;
+  padding-left: var(--gutter); padding-right: var(--gutter); box-sizing: border-box; width: 100%; }
+
+/* ── En-tête et navigation ─────────────────────────────────────────────────────────────── */
+.app-brand { align-items: center; }
+.app-title { display: block; font-weight: 700; font-size: 22px; line-height: 28px; color: var(--color-primary); }
+.app-subtitle { display: block; font-size: 14px; line-height: 20px; opacity: 0.75; margin-top: 2px; }
+.theme-switch { display: flex; justify-content: flex-end; }
+.theme-switch .taipy-toggle { position: static !important; }   /* par défaut : fixé en haut à droite */
+.theme-switch .taipy-toggle > .MuiTypography-root { display: none; }  /* libellé « Mode » inutile */
+.app-nav { margin-top: 10px; border-bottom: 1px solid var(--line); }
+.app-nav .MuiTab-root { text-transform: none; font-size: 16px; font-weight: 600; min-width: 0;
+  padding: 12px 16px; letter-spacing: 0; }
+.app-nav .MuiTabs-indicator { height: 3px; border-radius: 3px 3px 0 0; }
+
+/* ── Titres ────────────────────────────────────────────────────────────────────────────── */
+h1 { font-size: 36px !important; line-height: 44px !important; font-weight: 700 !important;
+     margin: 28px 0 12px 0 !important; letter-spacing: -0.01em; }
+h2 { font-size: 26px !important; line-height: 32px !important; font-weight: 700 !important;
+     margin: 36px 0 12px 0 !important; }
+h3 { font-size: 21px !important; line-height: 28px !important; font-weight: 700 !important;
+     margin: 4px 0 12px 0 !important; }
+h4 { font-size: 18px !important; line-height: 24px !important; font-weight: 700 !important; margin: 20px 0 8px 0 !important; }
+.card h2 { margin-top: 4px !important; }
+
+/* ── Textes descriptifs (demande : 19px / 23px Montserrat) ─────────────────────────────── */
+.lead, .body-text, .caption, .interpretation, .callout, .hero p, .card p, .card li, .card > span,
+.empty-state p, .footer, .card .md-para, .hero .md-para, .callout .md-para, .interpretation .md-para {
+  font: var(--font-desc);
+}
+.lead { display: block; max-width: 72ch; margin: 0 0 28px 0; opacity: 0.85; }
+.body-text { display: block; }
+.body-text p, .body-text .md-para { margin: 0 0 16px 0; max-width: 90ch; }
+.caption { display: block; margin: 12px 0 0 0; opacity: 0.8; }
+.card p, .card .md-para { margin: 0 0 14px 0; }
+.kpi-card .md-para { margin: 0; }
+.card li { margin-bottom: 6px; }
+.strong { font-weight: 700; }
+.field-label { display: block; font-weight: 600; font-size: 16px; line-height: 22px; margin: 18px 0 8px 0; }
+
+/* Textes dynamiques (composant « text ») : ils héritent de la police de leur conteneur */
+.callout .taipy-text, .interpretation .taipy-text, .body-text.taipy-text, .lead.taipy-text,
+.caption.taipy-text { font: var(--font-desc) !important; }
+h1 .taipy-text, h2 .taipy-text, h3 .taipy-text { font: inherit !important; }
+
+/* ── Bandeau d'accueil ─────────────────────────────────────────────────────────────────── */
+.hero { padding: 36px 40px; border-radius: 16px; margin-top: 24px;
+        background: linear-gradient(135deg, rgba(28,92,171,0.14), rgba(27,175,122,0.10));
+        border: 1px solid rgba(28,92,171,0.25); }
+.hero h1 { margin-top: 0 !important; }
+.hero p { max-width: 75ch; }
+.logo-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: 24px; }
+.logo-row img { background: #ffffff; border-radius: 8px; padding: 4px 8px; height: 56px;
+                object-fit: contain !important; }
+
+/* ── Encadrés ──────────────────────────────────────────────────────────────────────────── */
+.callout { display: block; border-left: 5px solid var(--color-primary); padding: 16px 22px; border-radius: 10px;
+           background-color: rgba(28,92,171,0.08); margin: 24px 0; }
+.callout p { margin: 0; }
+.callout-success { border-left-color: var(--color-success); background-color: rgba(27,175,122,0.09); }
+.interpretation { display: block; padding: 16px 20px; border-radius: 10px; background-color: var(--soft);
+                  margin-top: 18px; }
+.interpretation p { margin: 0; }
+
+/* ── Cartes ────────────────────────────────────────────────────────────────────────────── */
+.card { border: 1px solid var(--line); padding: 28px 32px !important; box-sizing: border-box; }
+.card.section { margin-top: 24px; }
+.nav-grid .nav-card { display: flex; flex-direction: column; height: 100%; }
+.nav-card .MuiButton-root { margin-top: auto; align-self: flex-start; }
+.step { display: block; font-weight: 700; color: var(--color-primary); text-transform: uppercase;
+        letter-spacing: 0.06em; font-size: 13px; line-height: 18px; margin-bottom: 6px; }
+.empty-state { opacity: 0.9; }
+
+/* Grilles : espacement régulier */
+.taipy-layout { gap: 24px !important; }
+
+/* ── Indicateurs clés ──────────────────────────────────────────────────────────────────── */
+.kpi-row { margin: 8px 0; }
+.kpi-card { display: flex; flex-direction: column; justify-content: center; gap: 6px; min-height: 128px;
+            padding: 20px 22px; border-radius: 12px; border: 1px solid var(--line);
+            background: var(--color-paper, rgba(255,255,255,0.6)); box-sizing: border-box; }
+.kpi-highlight { border-color: rgba(28,92,171,0.55); box-shadow: inset 0 0 0 1px rgba(28,92,171,0.35); }
+.kpi-card .md-para { display: flex; flex-direction: column; gap: 6px; }
+.kpi-label, .kpi-value, .kpi-delta { display: block; }
+.kpi-label { font-size: 15px; line-height: 20px; font-weight: 600; opacity: 0.8; }
+.kpi-value { font-size: 34px; line-height: 40px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.kpi-value-text { font-size: 20px; line-height: 26px; }
+.kpi-delta { font-size: 14px; line-height: 18px; font-weight: 600; color: #1baf7a; }
+.kpi-delta.neutral { color: inherit; opacity: 0.6; font-weight: 500; }
+
+/* ── Figures ───────────────────────────────────────────────────────────────────────────── */
+.figure { display: block; margin: 8px auto 0 auto; }
+.figure img { width: 100%; height: auto; border-radius: 10px; background: #ffffff; }
+.figure-medium { max-width: 860px; }
+
+/* ── Contrôles ─────────────────────────────────────────────────────────────────────────── */
+.MuiButton-root { font-weight: 600 !important; text-transform: none !important; font-size: 15px !important;
+                  padding: 9px 18px !important; border-radius: 10px !important; }
+.fullwidth, .fullwidth .MuiFormControl-root { width: 100% !important; }
+.danger.MuiButton-root, .danger .MuiButton-root { color: #c62828 !important; border-color: rgba(198,40,40,0.5) !important; }
+.MuiToggleButton-root { text-transform: none !important; font-size: 15px !important; font-weight: 600 !important; }
+.campaign-switch, .view-switch { flex-wrap: wrap; }
+.MuiAccordion-root { border-radius: 12px !important; border: 1px solid var(--line); box-shadow: none !important; }
+.MuiAccordion-root::before { display: none; }
+.MuiAccordionSummary-content { font-size: 17px !important; font-weight: 600 !important; }
+.mt1 { margin-top: 12px !important; } .mt2 { margin-top: 24px !important; }
+
+/* ── Tableaux ──────────────────────────────────────────────────────────────────────────── */
+.MuiTableCell-root { font-size: 15px !important; font-variant-numeric: tabular-nums; }
+.MuiTableCell-head { font-weight: 700 !important; }
+.cell-best { background-color: var(--best-bg) !important; color: var(--best-fg) !important; font-weight: 700 !important; }
+
+/* ── Scénarios : graphe des tâches ─────────────────────────────────────────────────────── */
+.pipeline { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 18px 0 4px 0; }
+.pipe-node { display: inline-block; padding: 8px 14px; border-radius: 999px; font-size: 15px; line-height: 20px;
+             font-weight: 600; border: 1px solid var(--line); }
+.pipe-data { background: var(--soft); }
+.pipe-task { background: rgba(28,92,171,0.14); border-color: rgba(28,92,171,0.45); color: var(--color-primary); }
+.pipe-arrow { opacity: 0.6; font-size: 18px; }
+
+/* ── Pied de page ──────────────────────────────────────────────────────────────────────── */
+.footer { display: block; margin-top: 48px; padding: 20px 0 32px 0; border-top: 1px solid var(--line);
+          font-size: 15px; line-height: 22px; opacity: 0.8; }
+
+/* ── Petits écrans ─────────────────────────────────────────────────────────────────────── */
+@media (max-width: 760px) {
+  :root { --gutter: 16px; }
+  h1 { font-size: 28px !important; line-height: 34px !important; }
+  h2 { font-size: 22px !important; line-height: 28px !important; }
+  .hero { padding: 24px 20px; }
+  .card { padding: 20px 18px !important; }
+  .kpi-value { font-size: 26px; line-height: 32px; }
+  .app-subtitle { display: none; }
+  .app-nav .MuiTab-root { padding: 10px 12px; font-size: 15px; }
+}
+
+/* ── Hypothèses : verdicts ─────────────────────────────────────────────────────────────── */
+.verdict { display: block; margin: 18px 0 6px 0; padding: 14px 18px; border-radius: 10px; font-weight: 700;
+           font-size: 18px; line-height: 24px; border: 1px solid transparent; }
+.verdict .taipy-text { font-weight: 700 !important; font-size: 18px !important; line-height: 24px !important; }
+.verdict-ok { background: rgba(27,175,122,0.14); border-color: rgba(27,175,122,0.5); color: var(--best-fg); }
+.verdict-partial { background: rgba(237,161,0,0.14); border-color: rgba(237,161,0,0.55); color: #9a6700; }
+.verdict-ko { background: rgba(227,73,72,0.12); border-color: rgba(227,73,72,0.5); color: #b3261e; }
+.MuiTableCell-root.verdict-ok, .MuiTableCell-root.verdict-partial, .MuiTableCell-root.verdict-ko {
+  margin: 0; padding: 6px 16px; border-radius: 0; font-size: 15px !important; font-weight: 600 !important; }

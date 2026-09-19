@@ -1,0 +1,7 @@
+method,temps moyen (s)
+AG standard,1.708485343725869
+AG op. aléatoires,1.8717108151482535
+AG + UCB1,1.901996446408577
+AG + QL (en ligne),1.9079694229517152
+AG + QL pré-entraîné,1.888567909486119
+Meilleure config. fixe (oracle),2.0038990343776497

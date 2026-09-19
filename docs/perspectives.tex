@@ -1,0 +1,310 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  french,
+  11pt,
+  a4paper,
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{TeX Gyre Pagella}
+  \setmathfont[]{TeX Gyre Pagella Math}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\ifLuaTeX
+\usepackage[bidi=basic,shorthands=off]{babel}
+\else
+\usepackage[bidi=default,shorthands=off]{babel}
+\fi
+\ifPDFTeX
+\else
+\babelfont{rm}[]{TeX Gyre Pagella}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage[style=apa]{biblatex}
+\addbibresource{../../02_ETAT_DE_L_ART_FINAL/references.bib}
+\usepackage{etoolbox,caption}\captionsetup{font=small,labelfont=bf,labelsep=endash}\captionsetup[table]{position=top}\AtBeginEnvironment{longtable}{\small}\addto\captionsfrench{\renewcommand{\tablename}{Tableau}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Perspectives de recherche --- RL-in-GA pour le problème du sac à dos et au-delà},
+  pdfauthor={RALAIVAO Niaiko Michaël --- Master Recherche, ENI / LIMAD / GLoRIA},
+  pdflang={fr},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={teal},
+  urlcolor={blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Perspectives de recherche --- RL-in-GA pour le problème du sac à
+dos et au-delà}
+\author{RALAIVAO Niaiko Michaël --- Master Recherche, ENI / LIMAD /
+GLoRIA}
+\date{Septembre 2026}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+Ce document recense ce qui \textbf{manque} au travail actuel, les
+\textbf{extensions} immédiates, les \textbf{interactions avec d'autres
+domaines} et les pistes de \textbf{généralisation}. Les pistes sont
+classées par horizon (court : quelques semaines ; moyen : un semestre ;
+long : une thèse).
+
+\section{Ce qui manque au travail actuel (limites à lever en
+priorité)}\label{perspectives-ce-qui-manque-au-travail-actuel-limites-uxe0-lever-en-priorituxe9}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Limite
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Conséquence
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Action proposée
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Horizon
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Population initiale aléatoire et budget indépendant de n & Au-delà de 5
+000 objets, le glouton bat l'AG (E5) & Initialisation gloutonne d'une
+fraction de la population (option \texttt{init\_greedy\_fraction} déjà
+codée) ; budget proportionnel à n & court \\
+Budget d'évaluation unique (P = 100, G = 200) & Les conclusions peuvent
+dépendre du budget : avec plus de générations, le QL en ligne aurait
+plus de temps pour apprendre & Courbes « qualité vs budget » (G ∈ \{50,
+100, 200, 500, 1 000\}) ; comparaison à temps de calcul égal & court \\
+Une seule métaheuristique de base et une seule réparation (très
+efficace) & La réparation gloutonne « lisse » les différences entre
+opérateurs & Répéter avec pénalisation au lieu de réparation ; faire de
+la stratégie de réparation une \textbf{action} (GAP 1, action \(r_t\)) &
+court \\
+Signal de récompense qui s'éteint en fin de recherche & Les états « fin
+de recherche » sont peu ou pas appris (Q ≈ 0) & Récompenses normalisées
+par rang ou relatives aux améliorations récentes ; attribution de crédit
+par valeurs extrêmes (EVCA) ou fenêtre glissante
+\autocite{karimi-mamaghan_machine_2022} & court \\
+Espace d'état discret et grossier (27 états) & Généralisation limitée ;
+seuils calibrés à la main & Q-learning avec approximation de fonction
+(tuile, MLP) ; \textbf{DQN} \autocite{mnih_2015} ou \textbf{PPO}
+\autocite{schulman_2017} sur l'état continu & moyen \\
+Descripteur d'instance φ(I) scalaire & Les états « classe difficile » ne
+sont vus qu'à l'entraînement & Représentation apprise de l'instance et
+de la population : Deep Sets / \textbf{Set Transformer}
+\autocite{lee_settransformer_2019} sur les objets \((w_i, v_i, p_i)\)
+(GAP 3) & moyen \\
+10 exécutions par instance, instances de taille ≤ 2 000 (sauf E5) &
+Puissance statistique limitée sur les petites différences & 30
+exécutions ; instances de Pisinger « hard » (déjà téléchargées) et 3 240
+instances de Jooken & court \\
+Comparaison exacte limitée à la PD et à HiGHS & Pas de comparaison avec
+\emph{Combo} ou \emph{Expknap} & Intégrer \emph{Combo} (code C de
+Pisinger) comme référence exacte spécialisée & court \\
+\end{longtable}
+}
+
+\section{Extensions
+méthodologiques}\label{perspectives-extensions-muxe9thodologiques}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Contrôle continu des paramètres} : au lieu de 9 actions
+  discrètes, l'agent règle directement \((p_c, p_m, k)\) --- politique
+  continue (PPO, SAC) ; comparaison avec la configuration dynamique
+  d'algorithmes \autocite{biedenkapp_2020}.
+\item
+  \textbf{Méta-apprentissage et transfert systématique} : entraîner sur
+  une distribution hétérogène d'instances et mesurer la généralisation
+  hors distribution selon trois axes --- taille, corrélation, serrage
+  --- comme proposé dans l'hypothèse GAP 1 ; sélection d'instances
+  d'entraînement représentatives \autocite{benjamins_2024}.
+\item
+  \textbf{Portefeuille de politiques (GAP 2)} : une archive MAP-Elites
+  \autocite{mouret_clune_2015} indexée par les caractéristiques
+  d'instance (corrélation × serrage) contenant des politiques
+  spécialisées, sélectionnées à l'exécution.
+\item
+  \textbf{Boucle fermée AR ↔ AG (type EAM)} : une politique neuronale
+  constructive initialise la population et l'AG affine ; les solutions
+  évoluées ré-entraînent la politique \autocite{gu_eam_2025} --- à
+  étendre au KP et à l'évaluation hors distribution.
+\item
+  \textbf{Hyper-heuristique} : l'agent choisit entre heuristiques
+  complètes (AG, recuit simulé, recherche tabou, recherche locale)
+  plutôt qu'entre opérateurs
+  \autocite{kallestad_general_2023,dokeroglu_hyper-heuristics_2024}.
+\item
+  \textbf{Cadre théorique} : relier la diversité de population (ou
+  l'entropie des fréquences \(p_i\)) à la capacité de généralisation
+  (question QT1/QT4 du brainstorming) ; borne sur le biais introduit par
+  l'agent (à la manière de la borne KL d'EAM).
+\end{enumerate}
+
+\section{Autres variantes du sac à dos et autres
+problèmes}\label{perspectives-autres-variantes-du-sac-uxe0-dos-et-autres-probluxe8mes}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Cible
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Ce qui change
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Intérêt
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+MKP de grande taille (GK, OR30x500) & rien dans l'architecture &
+NP-difficile au sens fort : la PLNE atteint vite ses limites \\
+Sac à dos avec graphe de conflits (KPCG)
+\autocite{pferschy_knapsack_2009}, avec précédences (PCKP) & réparation
+respectant les conflits / précédences & lien avec la théorie des graphes
+et la coloration \\
+Sac à dos quadratique, multiple, avec \emph{setups}
+\autocite{cacchiani_knapsack_2022} & évaluation non linéaire, codage
+entier & variantes sans algorithme dédié performant \\
+KP stochastique, dynamique, \emph{chance-constrained} & l'état inclut
+l'incertitude ; ré-optimisation & logistique en temps réel \\
+KP multi-objectif (valeur vs risque) & NSGA-II \autocite{deb_fast_2002}
+piloté par AR & aide à la décision multicritère (axe du LIMAD) \\
+TSP / CVRP, ordonnancement (FJSP) & codage en permutation, opérateurs OX
+/ 2-opt & valider la \textbf{généralité} du cadre (GAP 1, cas TSP)
+\autocite{chen_slga_2020} \\
+\end{longtable}
+}
+
+\section{Interactions avec d'autres
+domaines}\label{perspectives-interactions-avec-dautres-domaines}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Aide à la décision territoriale et SIG} (LIMAD) : sélection de
+  sites d'équipements, planification de projets communaux géolocalisés
+  --- prolongement direct de la communication de mai 2024 (cartographie
+  numérique).
+\item
+  \textbf{Logistique humanitaire} (gestion des risques et catastrophes)
+  : chargement multi-contraintes, affectation de véhicules, avec données
+  réelles d'organismes partenaires.
+\item
+  \textbf{Infonuagique et réseaux} : placement de machines virtuelles,
+  allocation de bande passante --- problèmes MKP dynamiques.
+\item
+  \textbf{Finance} : portefeuilles sous contraintes (KP moyenne-VaR
+  \autocite{vaezi_mean-var_2020}).
+\item
+  \textbf{Génie logiciel} (équipe GLoRIA) : sélection de fonctionnalités
+  à livrer sous contrainte de budget (\emph{next release problem},
+  variante du KP), sélection de tests de régression, allocation de
+  ressources dans les projets agiles.
+\item
+  \textbf{Modèles de langage} : génération ou sélection d'opérateurs par
+  un LLM, avec l'AR pour arbitrer --- piste émergente.
+\end{itemize}
+
+\section{Feuille de route proposée (vers une
+thèse)}\label{perspectives-feuille-de-route-proposuxe9e-vers-une-thuxe8se}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Phase
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Contenu
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Valorisation visée
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 (3 mois) & Levée des limites courtes : budget, réparation comme
+action, récompense normalisée, 30 exécutions, instances \emph{hard} &
+article de conférence (CARI, GECCO \emph{student workshop}) \\
+2 (6 mois) & État continu + DQN/PPO ; représentation Set Transformer ;
+protocole OOD complet (taille × corrélation × serrage) & article
+(EvoCOP, LION) \\
+3 (6--12 mois) & Généralisation TSP/FJSP ; portefeuille de politiques ;
+cas réels avec partenaires & revue (C\&OR, EJOR, \emph{Applied Soft
+Computing}) \\
+\end{longtable}
+}
+
+\printbibliography[title=Bibliographie]
+
+\end{document}

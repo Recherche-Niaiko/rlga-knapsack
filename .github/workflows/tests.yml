@@ -1,0 +1,20 @@
+# Vérifie à chaque push le paquet, l'encadrement des ressources, les performances et le démarrage de l'application.
+name: Tests rapides
+
+on: [push, pull_request]
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-app.txt
+      - name: Tests unitaires, de robustesse, de performance et d'intégration
+        env:
+          TZ: Indian/Antananarivo
+          OPENBLAS_NUM_THREADS: "1"
+          RLGA_FACTEUR_MACHINE: "2"   # machines d'intégration continue plus lentes : estimations plus prudentes
+        run: python -m unittest discover -s tests -v

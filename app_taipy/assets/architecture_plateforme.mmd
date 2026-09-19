@@ -1,0 +1,40 @@
+%% Variante du schéma d15 du mémoire pour la page « À propos » (aucun nom de bibliothèque d'interface).
+flowchart TB
+  subgraph DON["Couche données"]
+    direction LR
+    D1["Générateur<br/>de Pisinger"]
+    D2["Instances de référence<br/>Pisinger, Jooken, OR-Library"]
+    D3["Cas d'usage<br/>CSV et métadonnées"]
+  end
+  subgraph REF["Noyau : modèle et méthodes de référence"]
+    direction LR
+    N1["Modèle d'instance<br/>KP 0/1 et MKP"]
+    N2["Méthodes exactes<br/>PD, PLNE (HiGHS)"]
+    N3["Heuristique<br/>gloutonne"]
+  end
+  subgraph MET["Noyau : métaheuristique pilotée"]
+    direction LR
+    N4["AG vectorisé<br/>sélection, croisement,<br/>mutation, réparation"]
+    N5["Contrôleurs<br/>fixe, aléatoire,<br/>UCB1, Q-learning"]
+    N6["Apprentissage<br/>hors ligne<br/>(Q-table)"]
+    N5 <--> N4
+    N6 --> N5
+  end
+  subgraph EXP["Couche expérimentation"]
+    direction LR
+    X1["Campagnes<br/>parallèles"] --> X2["Tests<br/>statistiques"] --> X3["Figures et<br/>tableaux"]
+  end
+  subgraph PRES["Couche présentation : application web"]
+    direction LR
+    T1["Interface web<br/>8 pages, thème clair/sombre"] <--> T2["Moteur de scénarios<br/>scénarios, tâches, données"]
+  end
+  subgraph DEP["Déploiement"]
+    direction LR
+    Y3["GitHub<br/>versions, actions"] --> Y2["Hugging Face<br/>Spaces"]
+    Y1["Image<br/>Docker"] --> Y2
+  end
+  DON --> REF --> MET
+  MET --> EXP
+  MET --> PRES
+  EXP --> PRES
+  PRES --> DEP

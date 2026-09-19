@@ -1,0 +1,81 @@
+[TAIPY]
+
+[gui]
+
+[JOB]
+mode = "development"
+
+[CORE]
+root_folder = "./taipy/"
+storage_folder = "user_data/"
+taipy_storage_folder = ".taipy/"
+repository_type = "filesystem"
+read_entity_retry = "1:int"
+mode = "development"
+version_number = ""
+force = "False:bool"
+core_version = "4.1.1"
+
+[DATA_NODE.default]
+storage_type = "pickle"
+scope = "SCENARIO:SCOPE"
+
+[DATA_NODE.parametres]
+storage_type = "pickle"
+scope = "SCENARIO:SCOPE"
+
+[DATA_NODE.instance]
+storage_type = "pickle"
+scope = "SCENARIO:SCOPE"
+
+[DATA_NODE.resultats]
+storage_type = "pickle"
+scope = "SCENARIO:SCOPE"
+
+[DATA_NODE.convergence]
+storage_type = "pickle"
+scope = "SCENARIO:SCOPE"
+
+[TASK.default]
+inputs = []
+outputs = []
+skippable = "False:bool"
+
+[TASK.construire_instance]
+function = "backend.task_build_instance:function"
+inputs = [ "parametres:SECTION",]
+outputs = [ "instance:SECTION",]
+skippable = "True:bool"
+
+[TASK.resoudre]
+function = "backend.task_solve:function"
+inputs = [ "instance:SECTION", "parametres:SECTION",]
+outputs = [ "resultats:SECTION", "convergence:SECTION",]
+skippable = "False:bool"
+
+[SCENARIO.default]
+tasks = []
+additional_data_nodes = []
+
+[SCENARIO.comparaison_rlga]
+tasks = [ "construire_instance:SECTION", "resoudre:SECTION",]
+additional_data_nodes = []
+
+[DATA_NODE.parametres.default_data]
+source = "Pisinger (générée)"
+classe = "SC"
+n = "500:int"
+seed = "0:int"
+fichier = ""
+methodes = [ "GREEDY", "DP", "GA", "GA-RAND", "GA-QL", "GA-QL-T",]
+runs = "3:int"
+generations = "200:int"
+milp_time = "30:int"
+
+[SCENARIO.default.comparators]
+
+[SCENARIO.default.sequences]
+
+[SCENARIO.comparaison_rlga.comparators]
+
+[SCENARIO.comparaison_rlga.sequences]

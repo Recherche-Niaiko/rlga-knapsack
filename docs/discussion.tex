@@ -1,0 +1,376 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+\documentclass[
+  french,
+  11pt,
+  a4paper,
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=2.3cm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{TeX Gyre Pagella}
+  \setmathfont[]{TeX Gyre Pagella Math}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\ifLuaTeX
+\usepackage[bidi=basic,shorthands=off]{babel}
+\else
+\usepackage[bidi=default,shorthands=off]{babel}
+\fi
+\ifPDFTeX
+\else
+\babelfont{rm}[]{TeX Gyre Pagella}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage[style=apa]{biblatex}
+\addbibresource{../../02_ETAT_DE_L_ART_FINAL/references.bib}
+\usepackage{etoolbox,caption}\captionsetup{font=small,labelfont=bf,labelsep=endash}\captionsetup[table]{position=top}\AtBeginEnvironment{longtable}{\small}\addto\captionsfrench{\renewcommand{\tablename}{Tableau}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Discussion des résultats et des expérimentations --- RL-in-GA pour le problème du sac à dos},
+  pdfauthor={RALAIVAO Niaiko Michaël --- Master Recherche, ENI / LIMAD / GLoRIA},
+  pdflang={fr},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={teal},
+  urlcolor={blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Discussion des résultats et des expérimentations --- RL-in-GA
+pour le problème du sac à dos}
+\author{RALAIVAO Niaiko Michaël --- Master Recherche, ENI / LIMAD /
+GLoRIA}
+\date{Septembre 2026}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\section{Retour sur les
+hypothèses}\label{discussion-retour-sur-les-hypothuxe8ses}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Hypothèse
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Énoncé
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Verdict
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Éléments décisifs
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{H1} & L'AG piloté par AR fait mieux que l'AG standard &
+\textbf{Confirmée} & E1 : écart moyen 0,0074 \% (pré-entraîné) et 0,0111
+\% (en ligne) contre 0,0382 \% ; p \textless{} 10⁻⁵ ; aucune instance
+perdue. E2 : 0,0174 \% contre 0,0407 \% (p Holm = 0,001, 5/26/0). E3
+(MKP) : 0,236 \% contre 0,335 \% (p \textless{} 10⁻⁵, 28/30/0). \\
+\textbf{H2} & En ligne, le QL ne dépasse pas une sélection aléatoire &
+\textbf{Confirmée} & E1 : 0,0111 \% contre 0,0111 \%, p = 1,00 ; choix
+d'actions quasi uniformes. Confirmé sur E2 (p = 1,00) et sur le MKP (E3,
+p = 0,43). \\
+\textbf{H3} & Une Q-table apprise sur des instances faciles se transfère
+et approche l'oracle & \textbf{Partiellement confirmée} (KP 0/1) ;
+\textbf{non confirmée} pour le transfert vers le MKP & E1 : meilleure
+que aléatoire, UCB1 et QL en ligne (p ≤ 0,003, 0 défaite) mais
+inférieure à l'oracle (0/45/9). E2 : meilleure moyenne et meilleur rang,
+devant l'oracle (0,0174 \% contre 0,0248 \%), mais différences non
+significatives face aux autres adaptatifs. E3 (MKP) : \textbf{aucun
+gain} au-delà de la diversification --- le transfert inter-problèmes
+n'est pas établi. \\
+\textbf{H4} & Les méthodes exactes dominent sur le KP 0/1 modéré ; l'AG
++ AR prend l'avantage quand la PD devient infaisable ou pour le MKP &
+\textbf{Confirmée pour la première partie ; nuancée pour la seconde} &
+PD ≤ 3,4 s sur E1 ; PLNE optimale sur tous les cas d'usage en
+\textless{} 2 s ; PD infaisable pour \(C = 10^8\) (Jooken). E2 : sur les
+instances de Jooken à \(C = 10^8\), PD infaisable et PLNE non optimale
+en 60 s ; \textbf{toutes les variantes d'AG (≈ 7 s) font mieux}. E3 : la
+PLNE (60 s) reste meilleure que l'AG (≈ 2 s) sur le MKP testé. E5 : PD
+hors de portée au-delà de 5 000 objets ; PLNE sans preuve d'optimalité
+sur SC dès 500 objets ; mais, à budget fixe, le \textbf{glouton} devient
+meilleur que l'AG au-delà de 5 000 objets. \\
+\end{longtable}
+}
+
+\section{Interprétation}\label{discussion-interpruxe9tation}
+
+\subsection{L'effet principal est la diversification des opérateurs, pas
+l'apprentissage en
+ligne}\label{discussion-leffet-principal-est-la-diversification-des-opuxe9rateurs-pas-lapprentissage-en-ligne}
+
+Le résultat le plus robuste de ce travail est que \textbf{varier les
+opérateurs} au cours de la recherche --- de quelque manière que ce soit
+--- améliore fortement l'AG standard : sélection aléatoire, bandit UCB1
+et Q-learning en ligne obtiennent des performances statistiquement
+indiscernables, toutes environ 3,5 fois meilleures que l'AG standard sur
+E1. La figure \texttt{fig04\_politique\_actions} en donne la raison,
+conforme à l'analyse du dilemme exploration--exploitation
+\autocite{sutton_barto_2018} : en 200 générations, l'agent en ligne n'a
+vu chacun de ses 27 × 9 couples état--action qu'une poignée de fois ;
+ses choix restent quasi uniformes, c'est-à-dire \textbf{équivalents au
+hasard}. Le bandit UCB1 \autocite{auer_2002} se comporte de même car les
+récompenses, très faibles et non stationnaires (elles décroissent au fil
+de la recherche), ne permettent pas à ses estimations de se séparer.
+
+Cette observation rejoint un point connu de la littérature sur la
+sélection adaptative d'opérateurs : un portefeuille d'opérateurs
+\emph{tous raisonnables} rend la sélection aléatoire difficile à battre,
+et le gain de l'apprentissage n'est mesurable que si des opérateurs sont
+nettement meilleurs que d'autres \textbf{et} si l'agent dispose d'assez
+d'interactions pour les identifier
+\autocite{dacosta_2008,karimi-mamaghan_machine_2022}. Elle justifie a
+posteriori l'inclusion systématique d'un \textbf{témoin aléatoire} :
+sans lui, nous aurions conclu à tort que le Q-learning en ligne «
+améliore l'AG de 71 \% » alors que cet effet est dû à la
+diversification. Plusieurs travaux hybrides AG--apprentissage par
+renforcement ne comparent leur méthode qu'à l'AG standard
+\autocite{pettinger_everson_2002,chen_slga_2020,cui_hybrid_2024} ; les
+revues récentes recommandent au contraire des témoins plus exigeants
+\autocite{song_reinforcement_2023,li_bridging_2025}.
+
+\subsection{L'apprentissage devient utile lorsqu'il est pré-entraîné et
+transféré}\label{discussion-lapprentissage-devient-utile-lorsquil-est-pruxe9-entrauxeenuxe9-et-transfuxe9ruxe9}
+
+Le pré-entraînement lève la contrainte du nombre d'interactions, comme
+dans la configuration dynamique d'algorithmes apprise sur une
+distribution d'instances \autocite{biedenkapp_2020,benjamins_2024} : la
+Q-table \textbf{Q\_OOD} a accumulé 9 600 pas de décision sur 12
+instances faciles. Elle identifie la famille d'opérateurs la plus
+efficace (croisement uniforme avec mutation BF3 ou échange) --- celle-là
+même que la calibration exhaustive des 9 configurations fixes désigne
+comme oracle --- \textbf{sans l'avoir jamais « vue » sur des instances
+difficiles}, et la réutilise sur des classes (SC, ASC, ISC) et des
+tailles (500--1 000 objets) absentes de l'entraînement. C'est une
+confirmation, à l'échelle d'un master, de l'intuition du GAP 1 :
+\emph{apprendre à chercher} (quels opérateurs utiliser selon l'état de
+la recherche) se transfère mieux qu'\emph{apprendre à choisir} la
+solution, car cette connaissance dépend moins de la distribution des
+instances. Les approches de bout en bout, qui construisent directement
+la solution \autocite{bello_2016,kool_2019,kwon_2020}, doivent au
+contraire être réentraînées lorsque la distribution change
+\autocite{yoshua_bengio_machine_2021,mazyavkina_reinforcement_2021}.
+
+L'écart résiduel avec l'oracle s'explique par deux défauts identifiés :
+(i) les états de milieu de recherche, peu visités pendant
+l'entraînement, ont des valeurs Q quasi nulles et l'agent y choisit
+presque au hasard ; (ii) la récompense (amélioration relative du
+meilleur) s'éteint en fin de recherche, où les améliorations deviennent
+infimes, ce qui affaiblit l'apprentissage dans ces états --- un problème
+d'attribution du crédit bien identifié en apprentissage par renforcement
+pour l'optimisation combinatoire \autocite{yan_deep_2022}.
+
+\subsection{Les limites du transfert : le cas du
+MKP}\label{discussion-les-limites-du-transfert-le-cas-du-mkp}
+
+Appliquée sans modification au sac à dos multidimensionnel
+\autocite{kellerer_multidimensional_2004,chu_beasley_1998}, la Q-table
+apprise sur le KP 0/1 conserve l'avantage de la diversification (elle
+bat nettement l'AG standard) mais ne fait pas mieux que la sélection
+aléatoire, alors que l'oracle (croisement uniforme + BF3) reste
+significativement meilleur. Autrement dit, la \textbf{connaissance «
+quels opérateurs utiliser » se transfère d'une classe de KP à une autre
+et à des tailles supérieures, mais pas d'un problème à un autre} lorsque
+la structure des contraintes change : l'état observé par l'agent
+(diversité, stagnation, avancement) ne contient aucune information sur
+la structure multi-contraintes, et la dynamique de la recherche diffère.
+Un entraînement incluant des instances MKP, ou une représentation de
+l'instance (nombre de contraintes, serrage par dimension), comme dans
+les travaux dédiés au MKP
+\autocite{bushaj_k-means_2024,ozsoydan_reinforcement_2023}, sont
+nécessaires --- c'est le prolongement naturel de l'hypothèse H3 du GAP 1
+(transfert KP → MKP).
+
+\subsection{Le descripteur d'instance n'aide pas
+(encore)}\label{discussion-le-descripteur-dinstance-naide-pas-encore}
+
+La variante avec descripteur \(\varphi(I)\) (81 états) fait moins bien
+que la version sans descripteur (0,0105 \% contre 0,0074 \%). À budget
+d'entraînement comparable, tripler le nombre d'états dilue l'expérience
+de l'agent. Ce résultat négatif est instructif : l'information
+d'instance doit être \textbf{représentée} de manière continue et
+généralisable (approximation de fonction, réseaux sur ensembles) plutôt
+que par un découpage discret, par exemple par des réseaux invariants par
+permutation \autocite{lee_settransformer_2019} ou des réseaux de
+neurones sur graphes \autocite{khalil_2017} --- c'est exactement l'objet
+du GAP 3.
+
+\subsection{Pourquoi la récompense la plus simple est la
+meilleure}\label{discussion-pourquoi-la-ruxe9compense-la-plus-simple-est-la-meilleure}
+
+Lors de la calibration, ajouter le taux de descendants meilleurs que
+leurs parents a favorisé les opérateurs \textbf{prudents} (1P + BF1),
+qui produisent souvent des descendants légèrement meilleurs mais
+n'explorent pas : une récompense \textbf{myope} récompense
+l'exploitation immédiate au détriment de la qualité finale. La pénalité
+de perte de diversité, de son côté, pénalise toute la fin de recherche
+(où la diversité baisse inévitablement) et brouille le signal.
+L'amélioration relative du meilleur individu, bien que parcimonieuse,
+reste la mieux alignée avec l'objectif final, comme dans la plupart des
+schémas de sélection d'opérateurs par apprentissage par renforcement
+\autocite{karimi-mamaghan_machine_2022,talbi_2021}.
+
+\subsection{Positionnement face aux méthodes
+exactes}\label{discussion-positionnement-face-aux-muxe9thodes-exactes}
+
+Sur le KP 0/1 de taille modérée, les méthodes exactes sont
+\textbf{imbattables} : la programmation dynamique
+\autocite{bellman_1957,kellerer_improved_2004} résout les instances d'E1
+en quelques secondes au plus, et la PLNE (solveur HiGHS
+\autocite{huangfu_hall_2018}) trouve l'optimum de toutes les instances
+d'E1 et de tous les cas d'usage, même lorsqu'elle ne parvient pas à
+\emph{prouver} l'optimalité dans le temps imparti (12 instances
+corrélées). C'est cohérent avec le statut du KP 0/1, NP-difficile au
+sens faible
+\autocite{garey_johnson_1979,pisinger_where_2005,cacchiani_knapsack_2022-1}.
+Les instances de \textcite{jooken_2022} montrent toutefois qu'il existe
+des KP 0/1 difficiles pour les solveurs exacts. L'intérêt de l'AG + AR
+n'est donc pas de remplacer ces méthodes sur ce problème, mais de
+fournir un \textbf{cadre générique} (même code pour KP et MKP, sans
+modélisation mathématique ni solveur) et un outil qui reste applicable
+quand la PD devient infaisable (capacités de \(10^8\) chez Jooken).
+L'expérience E5 précise ce positionnement : à grande échelle, l'avantage
+ne revient pas automatiquement à l'AG --- à budget fixe de 200
+générations et avec une population initiale aléatoire, il est dépassé
+par le simple glouton à partir de 5 000 objets, tandis que le QL
+pré-entraîné reste 3 à 8 fois meilleur que l'AG standard. Un AG
+compétitif à cette échelle doit être \textbf{initialisé par le glouton}
+et disposer d'un budget adapté à la taille ; ce sont des améliorations
+d'ingénierie qui laissent intacte la conclusion principale (apport du
+pré-entraînement relativement à l'AG non piloté).
+
+\subsection{Un échec instructif : l'admission de machines
+virtuelles}\label{discussion-un-uxe9chec-instructif-ladmission-de-machines-virtuelles}
+
+Sur le cas d'usage « machines virtuelles » (MKP à 3 ressources, 300
+demandes), l'AG standard obtient le meilleur écart moyen des variantes
+d'AG (2,3 \%), devant le QL en ligne (2,8 \%), le QL pré-entraîné (3,4
+\%) et l'aléatoire (4,0 \%), tous loin de la PLNE (optimale en 1,5 s) ;
+le glouton y est très mauvais (25 \%). Les objets y sont peu nombreux et
+très hétérogènes (8 profils, du « micro » au « stockage »), si bien que
+les opérateurs disruptifs (croisement uniforme) détruisent des
+combinaisons cohérentes. La politique transférée, apprise sur des KP 0/1
+aux objets homogènes, \textbf{n'est pas universelle}, conformément au
+théorème « pas de repas gratuit » \autocite{wolpert_macready_1997} :
+c'est une limite directe de l'hypothèse de transfert, qui plaide pour un
+entraînement sur une distribution d'instances plus variée et pour une
+représentation de l'instance.
+
+\section{Limites et menaces à la
+validité}\label{discussion-limites-et-menaces-uxe0-la-validituxe9}
+
+\textbf{Validité interne.} Graines appariées et identiques pour toutes
+les méthodes ; même budget d'évaluations ; calibration et entraînement
+sur des instances disjointes des tests. En revanche, l'oracle (UX + BF3)
+a été choisi sur des instances SC/ASC/UC de calibration : son avantage
+sur les autres classes peut être légèrement surestimé ou sous-estimé.
+
+\textbf{Validité de construction.} L'écart à l'optimum est mesuré à
+budget d'évaluations fixe ; à \textbf{temps} égal, le classement
+pourrait différer légèrement (le QL coûte ≈ 10 \% de temps en plus). Les
+écarts sont petits en valeur absolue (centièmes de \%), car la
+réparation gloutonne rend l'AG déjà très bon ; les conclusions portent
+sur des différences relatives significatives.
+
+\textbf{Validité externe.} Un seul AG, une seule réparation, un seul
+budget (P = 100, G = 200) et 10 exécutions par instance ; instances de
+100 à 2 000 objets (10 000 pour E5) ; un seul type d'agent (Q-learning
+tabulaire). La généralisation à d'autres métaheuristiques, budgets et
+problèmes reste à établir
+\autocite{rajwar_exhaustive_2023,dokeroglu_hyper-heuristics_2024}.
+
+\textbf{Validité statistique.} Tests non paramétriques appariés au
+niveau instance (Wilcoxon, Friedman) avec correction de Holm, selon
+\textcite{demsar_2006} et \textcite{derrac_2011} ; tailles d'effet
+\(A_{12}\) \autocite{vargha_delaney_2000} modérées (0,58--0,74). La
+différence critique de Nemenyi (CD = 1,23) ne sépare pas QL pré-entraîné
+et oracle au niveau des rangs, mais le test apparié de Wilcoxon, plus
+puissant, les distingue.
+
+\section{Apports et leçons}\label{discussion-apports-et-leuxe7ons}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Pour le praticien} : sur le KP/MKP, un AG avec réparation
+  gloutonne et \textbf{diversité d'opérateurs} (même aléatoire) est un
+  solide point de départ ; un réglage appris hors ligne améliore encore
+  la qualité sans réglage manuel par classe
+  \autocite{eiben_1999,biedenkapp_2020}.
+\item
+  \textbf{Pour le chercheur} : toute étude « RL-in-GA » devrait inclure
+  des témoins \textbf{aléatoire}, \textbf{bandit} et \textbf{meilleure
+  configuration fixe} ; sans eux, l'apport de l'apprentissage est
+  surestimé.
+\item
+  \textbf{Pour la suite} : le transfert fonctionne quand la distribution
+  d'entraînement couvre la structure des instances cibles, et échoue
+  sinon (machines virtuelles) --- la représentation de l'instance et de
+  la population est la clé (voir \texttt{perspectives.md}).
+\end{enumerate}
+
+\printbibliography[title=Bibliographie]
+
+\end{document}

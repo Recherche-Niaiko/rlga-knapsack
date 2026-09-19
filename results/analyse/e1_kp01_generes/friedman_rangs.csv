@@ -1,0 +1,8 @@
+method,rang moyen
+Meilleure config. fixe (oracle),2.6296296296296298
+AG + QL pré-entraîné,3.1018518518518516
+AG + UCB1,3.962962962962963
+AG op. aléatoires,4.083333333333333
+AG + QL (en ligne),4.083333333333333
+AG + QL pré-entraîné + φ(I),4.092592592592593
+AG standard,6.046296296296297

@@ -1,0 +1,49 @@
+# ── Dépôt public « rlga-knapsack » (voir GUIDE_GIT.md §1 et §3) ──
+
+# Environnements, caches et paquets Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Données d'exécution de Taipy (scénarios locaux des utilisateurs)
+.taipy/
+**/.taipy/
+user_data/
+**/user_data/
+
+# Journaux et fichiers auxiliaires LaTeX
+*.log
+results/*.stdout
+*.aux
+*.fls
+*.fdb_latexmk
+*.out
+*.toc
+*.bbl
+*.bbl-SAVE-ERROR
+*.bcf
+*.bcf-SAVE-ERROR
+*.blg
+*.run.xml
+*.xdv
+docs/versions/
+
+# Secrets et réglages locaux (jamais publiés)
+.env
+*.key
+*_api_key*.txt
+
+# Éditeurs et systèmes
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Guides à usage personnel de l'auteur (démonstration, parcours de la plateforme) : jamais publiés
+docs/guide_demonstration.*
+docs/guide_parcours_plateforme.*

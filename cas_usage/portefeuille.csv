@@ -1,0 +1,401 @@
+id,secteur,investissement (k USD),valeur attendue à 3 ans (k USD)
+A001,Éducation privée,932.0,1018.8
+A002,Éducation privée,208.0,237.5
+A003,Éducation privée,174.0,195.9
+A004,Riziculture,567.0,628.4
+A005,Mines artisanales,163.0,182.8
+A006,Riziculture,147.0,164.7
+A007,Tourisme,761.0,839.9
+A008,Énergie solaire,585.0,643.3
+A009,Riziculture,467.0,522.7
+A010,Mines artisanales,501.0,564.3
+A011,Tourisme,165.0,188.1
+A012,Énergie solaire,641.0,714.6
+A013,Agro-industrie (vanille),675.0,735.0
+A014,Mines artisanales,836.0,932.1
+A015,Tourisme,84.0,98.2
+A016,Textile,899.0,996.0
+A017,Riziculture,344.0,379.2
+A018,Textile,420.0,464.5
+A019,Pêche,916.0,1002.2
+A020,Pêche,942.0,1050.8
+A021,Tourisme,456.0,504.1
+A022,Agro-industrie (vanille),373.0,415.9
+A023,Transport,57.0,68.1
+A024,Transport,924.0,1034.9
+A025,Mines artisanales,171.0,190.5
+A026,Transport,192.0,217.6
+A027,Télécoms,637.0,700.0
+A028,Énergie solaire,570.0,637.8
+A029,Agro-industrie (vanille),776.0,859.4
+A030,Éducation privée,322.0,362.0
+A031,Énergie solaire,665.0,745.8
+A032,Pêche,259.0,292.8
+A033,Tourisme,516.0,581.7
+A034,Pêche,680.0,745.8
+A035,Textile,254.0,281.1
+A036,Agro-industrie (vanille),468.0,511.8
+A037,Énergie solaire,753.0,844.5
+A038,Pêche,724.0,799.8
+A039,Transport,565.0,636.5
+A040,Textile,299.0,332.7
+A041,Énergie solaire,179.0,199.4
+A042,Agro-industrie (vanille),790.0,875.7
+A043,Transport,933.0,1032.3
+A044,Riziculture,873.0,953.0
+A045,Transport,562.0,633.2
+A046,Pêche,192.0,218.3
+A047,Transport,609.0,665.4
+A048,Éducation privée,975.0,1071.6
+A049,Énergie solaire,626.0,695.4
+A050,Énergie solaire,66.0,77.3
+A051,Transport,771.0,837.9
+A052,Mines artisanales,171.0,191.3
+A053,Transport,528.0,589.5
+A054,Télécoms,641.0,720.6
+A055,Riziculture,135.0,154.4
+A056,Transport,484.0,543.2
+A057,Agro-industrie (vanille),468.0,526.9
+A058,Textile,878.0,955.0
+A059,Textile,843.0,926.8
+A060,Éducation privée,793.0,870.6
+A061,Textile,238.0,270.0
+A062,Mines artisanales,871.0,961.7
+A063,Mines artisanales,800.0,869.5
+A064,Riziculture,833.0,907.3
+A065,Énergie solaire,977.0,1097.7
+A066,Éducation privée,919.0,1020.9
+A067,Télécoms,677.0,759.8
+A068,Télécoms,412.0,459.0
+A069,Énergie solaire,936.0,1035.3
+A070,Énergie solaire,720.0,791.8
+A071,Tourisme,539.0,602.9
+A072,Pêche,25.0,32.8
+A073,Mines artisanales,940.0,1024.3
+A074,Éducation privée,804.0,900.7
+A075,Textile,585.0,650.2
+A076,Agro-industrie (vanille),626.0,686.4
+A077,Textile,118.0,134.8
+A078,Agro-industrie (vanille),815.0,917.5
+A079,Éducation privée,196.0,219.7
+A080,Mines artisanales,75.0,87.5
+A081,Tourisme,333.0,371.9
+A082,Énergie solaire,147.0,167.5
+A083,Mines artisanales,716.0,779.5
+A084,Agro-industrie (vanille),418.0,460.7
+A085,Énergie solaire,149.0,166.5
+A086,Riziculture,265.0,293.8
+A087,Riziculture,322.0,356.5
+A088,Télécoms,824.0,919.2
+A089,Éducation privée,474.0,525.6
+A090,Textile,284.0,319.2
+A091,Tourisme,763.0,836.2
+A092,Énergie solaire,897.0,984.0
+A093,Transport,783.0,870.5
+A094,Éducation privée,488.0,537.7
+A095,Riziculture,334.0,374.1
+A096,Éducation privée,399.0,451.3
+A097,Télécoms,956.0,1053.0
+A098,Mines artisanales,285.0,313.1
+A099,Riziculture,362.0,408.1
+A100,Mines artisanales,458.0,500.0
+A101,Pêche,855.0,942.3
+A102,Agro-industrie (vanille),255.0,288.5
+A103,Télécoms,660.0,733.0
+A104,Textile,312.0,345.7
+A105,Mines artisanales,934.0,1044.6
+A106,Énergie solaire,298.0,332.9
+A107,Énergie solaire,727.0,793.6
+A108,Énergie solaire,207.0,235.1
+A109,Riziculture,256.0,286.1
+A110,Énergie solaire,361.0,395.2
+A111,Agro-industrie (vanille),54.0,65.3
+A112,Textile,218.0,241.5
+A113,Éducation privée,211.0,240.7
+A114,Télécoms,230.0,256.4
+A115,Tourisme,77.0,89.9
+A116,Tourisme,992.0,1086.0
+A117,Éducation privée,608.0,663.1
+A118,Énergie solaire,110.0,124.1
+A119,Agro-industrie (vanille),458.0,501.5
+A120,Éducation privée,600.0,675.8
+A121,Éducation privée,346.0,383.4
+A122,Éducation privée,608.0,684.1
+A123,Textile,421.0,469.6
+A124,Pêche,54.0,63.7
+A125,Riziculture,563.0,626.8
+A126,Textile,77.0,90.4
+A127,Télécoms,617.0,674.6
+A128,Télécoms,309.0,340.2
+A129,Télécoms,585.0,642.7
+A130,Agro-industrie (vanille),474.0,519.6
+A131,Énergie solaire,755.0,842.9
+A132,Mines artisanales,714.0,783.5
+A133,Télécoms,299.0,338.7
+A134,Textile,975.0,1082.3
+A135,Riziculture,890.0,987.5
+A136,Éducation privée,940.0,1022.6
+A137,Énergie solaire,348.0,394.6
+A138,Transport,122.0,138.6
+A139,Éducation privée,467.0,526.4
+A140,Mines artisanales,451.0,492.6
+A141,Télécoms,392.0,441.4
+A142,Télécoms,234.0,264.2
+A143,Mines artisanales,62.0,73.6
+A144,Tourisme,565.0,631.4
+A145,Éducation privée,248.0,277.1
+A146,Textile,212.0,239.4
+A147,Tourisme,537.0,592.2
+A148,Textile,799.0,894.7
+A149,Riziculture,255.0,289.1
+A150,Agro-industrie (vanille),346.0,381.2
+A151,Éducation privée,470.0,523.8
+A152,Éducation privée,391.0,433.4
+A153,Tourisme,270.0,303.6
+A154,Tourisme,852.0,934.8
+A155,Télécoms,499.0,559.0
+A156,Transport,571.0,634.6
+A157,Télécoms,592.0,666.9
+A158,Éducation privée,670.0,742.0
+A159,Transport,218.0,240.5
+A160,Riziculture,487.0,544.6
+A161,Agro-industrie (vanille),937.0,1021.8
+A162,Agro-industrie (vanille),389.0,431.8
+A163,Transport,499.0,545.5
+A164,Éducation privée,150.0,167.3
+A165,Énergie solaire,174.0,198.4
+A166,Pêche,157.0,179.9
+A167,Éducation privée,688.0,775.1
+A168,Pêche,451.0,502.4
+A169,Agro-industrie (vanille),593.0,656.7
+A170,Tourisme,906.0,985.7
+A171,Pêche,973.0,1057.6
+A172,Pêche,473.0,534.1
+A173,Télécoms,923.0,1026.0
+A174,Agro-industrie (vanille),995.0,1093.8
+A175,Énergie solaire,918.0,1005.8
+A176,Agro-industrie (vanille),125.0,142.5
+A177,Riziculture,28.0,36.1
+A178,Éducation privée,900.0,1009.5
+A179,Riziculture,477.0,534.7
+A180,Transport,542.0,590.7
+A181,Riziculture,999.0,1108.5
+A182,Éducation privée,624.0,683.6
+A183,Éducation privée,462.0,507.0
+A184,Agro-industrie (vanille),573.0,638.3
+A185,Textile,363.0,404.8
+A186,Textile,26.0,33.3
+A187,Mines artisanales,252.0,285.2
+A188,Tourisme,841.0,924.5
+A189,Riziculture,662.0,732.0
+A190,Riziculture,423.0,477.4
+A191,Mines artisanales,728.0,808.6
+A192,Riziculture,231.0,256.2
+A193,Mines artisanales,431.0,474.8
+A194,Télécoms,832.0,923.8
+A195,Textile,186.0,212.0
+A196,Transport,107.0,124.6
+A197,Tourisme,530.0,592.2
+A198,Énergie solaire,925.0,1010.3
+A199,Transport,76.0,89.8
+A200,Télécoms,471.0,524.2
+A201,Éducation privée,317.0,349.9
+A202,Mines artisanales,965.0,1076.7
+A203,Pêche,715.0,788.1
+A204,Mines artisanales,86.0,101.2
+A205,Textile,934.0,1029.3
+A206,Riziculture,479.0,532.4
+A207,Tourisme,851.0,954.4
+A208,Pêche,946.0,1043.4
+A209,Télécoms,537.0,598.5
+A210,Textile,178.0,201.6
+A211,Énergie solaire,112.0,127.7
+A212,Mines artisanales,339.0,373.0
+A213,Riziculture,38.0,47.1
+A214,Riziculture,742.0,807.3
+A215,Mines artisanales,350.0,386.6
+A216,Énergie solaire,648.0,707.5
+A217,Transport,875.0,975.1
+A218,Pêche,83.0,97.7
+A219,Textile,537.0,587.2
+A220,Tourisme,531.0,582.7
+A221,Riziculture,467.0,523.8
+A222,Télécoms,609.0,669.1
+A223,Télécoms,79.0,92.4
+A224,Énergie solaire,165.0,186.7
+A225,Tourisme,589.0,659.2
+A226,Transport,578.0,640.5
+A227,Transport,173.0,194.2
+A228,Mines artisanales,396.0,433.0
+A229,Tourisme,620.0,682.4
+A230,Énergie solaire,366.0,410.3
+A231,Agro-industrie (vanille),919.0,1020.0
+A232,Riziculture,458.0,504.7
+A233,Tourisme,62.0,73.1
+A234,Textile,318.0,351.9
+A235,Pêche,879.0,964.0
+A236,Pêche,887.0,976.0
+A237,Mines artisanales,134.0,154.8
+A238,Riziculture,830.0,913.0
+A239,Pêche,533.0,597.2
+A240,Textile,758.0,840.2
+A241,Énergie solaire,238.0,266.7
+A242,Télécoms,817.0,896.4
+A243,Tourisme,868.0,946.6
+A244,Agro-industrie (vanille),761.0,827.5
+A245,Énergie solaire,217.0,247.8
+A246,Énergie solaire,575.0,634.9
+A247,Éducation privée,410.0,454.4
+A248,Mines artisanales,678.0,744.4
+A249,Éducation privée,752.0,830.5
+A250,Pêche,266.0,295.7
+A251,Tourisme,112.0,126.8
+A252,Tourisme,817.0,905.3
+A253,Transport,785.0,874.7
+A254,Textile,755.0,824.5
+A255,Pêche,61.0,71.2
+A256,Éducation privée,234.0,264.8
+A257,Transport,976.0,1063.4
+A258,Télécoms,463.0,507.9
+A259,Éducation privée,252.0,281.4
+A260,Pêche,709.0,774.0
+A261,Télécoms,362.0,398.3
+A262,Transport,107.0,124.8
+A263,Télécoms,50.0,60.4
+A264,Agro-industrie (vanille),234.0,260.1
+A265,Énergie solaire,950.0,1037.8
+A266,Énergie solaire,749.0,833.3
+A267,Télécoms,423.0,471.6
+A268,Pêche,897.0,985.8
+A269,Mines artisanales,227.0,254.9
+A270,Mines artisanales,799.0,893.2
+A271,Riziculture,75.0,87.5
+A272,Mines artisanales,923.0,1027.1
+A273,Riziculture,410.0,448.8
+A274,Textile,279.0,313.6
+A275,Agro-industrie (vanille),966.0,1067.9
+A276,Transport,488.0,537.1
+A277,Tourisme,599.0,669.4
+A278,Agro-industrie (vanille),447.0,487.9
+A279,Éducation privée,379.0,425.1
+A280,Transport,697.0,779.3
+A281,Tourisme,313.0,351.6
+A282,Transport,211.0,235.4
+A283,Tourisme,70.0,82.0
+A284,Agro-industrie (vanille),276.0,311.0
+A285,Éducation privée,430.0,485.0
+A286,Transport,181.0,202.0
+A287,Agro-industrie (vanille),365.0,407.1
+A288,Tourisme,383.0,423.1
+A289,Pêche,62.0,72.3
+A290,Pêche,266.0,300.2
+A291,Agro-industrie (vanille),937.0,1038.0
+A292,Riziculture,76.0,88.4
+A293,Textile,148.0,165.8
+A294,Éducation privée,283.0,315.3
+A295,Énergie solaire,615.0,670.4
+A296,Tourisme,248.0,281.1
+A297,Énergie solaire,566.0,631.5
+A298,Éducation privée,987.0,1086.1
+A299,Transport,967.0,1055.4
+A300,Tourisme,296.0,329.3
+A301,Pêche,513.0,569.0
+A302,Mines artisanales,786.0,877.4
+A303,Transport,884.0,975.1
+A304,Transport,962.0,1060.7
+A305,Télécoms,737.0,809.9
+A306,Énergie solaire,248.0,282.4
+A307,Agro-industrie (vanille),651.0,709.4
+A308,Énergie solaire,228.0,254.9
+A309,Transport,603.0,663.6
+A310,Riziculture,561.0,619.0
+A311,Énergie solaire,684.0,755.4
+A312,Télécoms,131.0,149.1
+A313,Tourisme,257.0,286.8
+A314,Textile,387.0,425.8
+A315,Textile,839.0,932.8
+A316,Éducation privée,543.0,602.1
+A317,Télécoms,269.0,298.5
+A318,Télécoms,239.0,271.7
+A319,Énergie solaire,426.0,473.0
+A320,Éducation privée,998.0,1111.0
+A321,Pêche,213.0,239.7
+A322,Agro-industrie (vanille),180.0,203.4
+A323,Textile,732.0,800.0
+A324,Télécoms,285.0,318.3
+A325,Riziculture,828.0,919.1
+A326,Tourisme,705.0,783.3
+A327,Télécoms,265.0,295.6
+A328,Pêche,235.0,263.0
+A329,Pêche,566.0,637.3
+A330,Transport,712.0,792.1
+A331,Tourisme,22.0,29.1
+A332,Énergie solaire,404.0,451.2
+A333,Tourisme,825.0,903.4
+A334,Éducation privée,536.0,591.3
+A335,Tourisme,907.0,994.6
+A336,Pêche,534.0,592.7
+A337,Transport,405.0,447.6
+A338,Éducation privée,937.0,1029.1
+A339,Agro-industrie (vanille),435.0,485.2
+A340,Éducation privée,847.0,926.1
+A341,Énergie solaire,914.0,992.8
+A342,Mines artisanales,825.0,913.6
+A343,Riziculture,274.0,311.8
+A344,Riziculture,948.0,1052.9
+A345,Tourisme,899.0,978.8
+A346,Textile,602.0,656.0
+A347,Mines artisanales,557.0,623.3
+A348,Pêche,878.0,973.3
+A349,Pêche,28.0,35.8
+A350,Agro-industrie (vanille),668.0,752.8
+A351,Énergie solaire,828.0,900.7
+A352,Transport,957.0,1043.1
+A353,Textile,21.0,28.4
+A354,Télécoms,280.0,310.2
+A355,Transport,657.0,719.4
+A356,Textile,560.0,631.2
+A357,Tourisme,103.0,119.6
+A358,Éducation privée,279.0,317.4
+A359,Agro-industrie (vanille),186.0,205.9
+A360,Énergie solaire,597.0,664.1
+A361,Transport,639.0,716.7
+A362,Agro-industrie (vanille),812.0,896.8
+A363,Riziculture,310.0,347.8
+A364,Textile,580.0,636.1
+A365,Télécoms,815.0,890.3
+A366,Énergie solaire,844.0,944.2
+A367,Agro-industrie (vanille),381.0,429.3
+A368,Énergie solaire,699.0,764.6
+A369,Agro-industrie (vanille),959.0,1053.2
+A370,Transport,180.0,202.6
+A371,Mines artisanales,343.0,384.2
+A372,Textile,908.0,1001.8
+A373,Tourisme,165.0,187.8
+A374,Transport,82.0,95.6
+A375,Agro-industrie (vanille),287.0,325.0
+A376,Mines artisanales,462.0,517.3
+A377,Agro-industrie (vanille),520.0,573.8
+A378,Tourisme,464.0,514.0
+A379,Énergie solaire,908.0,993.9
+A380,Télécoms,323.0,365.0
+A381,Mines artisanales,436.0,487.3
+A382,Agro-industrie (vanille),130.0,148.0
+A383,Éducation privée,458.0,504.1
+A384,Agro-industrie (vanille),717.0,788.8
+A385,Télécoms,319.0,361.7
+A386,Éducation privée,161.0,179.4
+A387,Pêche,293.0,326.1
+A388,Riziculture,298.0,337.6
+A389,Riziculture,71.0,83.0
+A390,Agro-industrie (vanille),216.0,246.3
+A391,Éducation privée,572.0,637.4
+A392,Mines artisanales,32.0,40.0
+A393,Textile,201.0,229.8
+A394,Textile,645.0,713.3
+A395,Textile,827.0,905.3
+A396,Télécoms,46.0,56.1
+A397,Riziculture,625.0,681.2
+A398,Textile,864.0,966.0
+A399,Mines artisanales,480.0,529.7
+A400,Mines artisanales,197.0,223.4

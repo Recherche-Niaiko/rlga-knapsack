@@ -1,0 +1,20 @@
+.venv/
+**/__pycache__/
+**/.taipy/
+**/user_data/
+**/*.log
+**/*.aux
+**/*.fls
+**/*.fdb_latexmk
+**/*.out
+**/*.toc
+.git/
+.github/
+results/*.stdout
+docs/versions/
+# Guides à usage personnel de l'auteur
+docs/guide_demonstration.*
+docs/guide_parcours_plateforme.*
+# Page vitrine (déployée séparément sur Hugging Face)
+vitrine/
+render.yaml

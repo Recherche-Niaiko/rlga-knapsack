@@ -1,0 +1,11 @@
+**Rangs moyens (Friedman χ²=130.15, p=1.20e-25, N=54, CD Nemenyi=1.23) — e1_kp01_generes**
+
+| method                          |   rang moyen |
+|:--------------------------------|-------------:|
+| Meilleure config. fixe (oracle) |         2.63 |
+| AG + QL pré-entraîné            |         3.10 |
+| AG + UCB1                       |         3.96 |
+| AG op. aléatoires               |         4.08 |
+| AG + QL (en ligne)              |         4.08 |
+| AG + QL pré-entraîné + φ(I)     |         4.09 |
+| AG standard                     |         6.05 |

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- SPDX-License-Identifier: MIT — page de présentation statique (Hugging Face Spaces, offre gratuite « Static ») -->
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RL-in-GA · Problème du sac à dos</title>
+<meta name="description" content="Intégration de l'apprentissage par renforcement dans l'algorithme génétique pour le problème du sac à dos — mémoire de Master Recherche, ENI, Université de Fianarantsoa.">
+<style>
+@font-face { font-family: Montserrat; font-weight: 400; src: url(fonts/montserrat-400.woff2) format("woff2"); font-display: swap; }
+@font-face { font-family: Montserrat; font-weight: 600; src: url(fonts/montserrat-600.woff2) format("woff2"); font-display: swap; }
+@font-face { font-family: Montserrat; font-weight: 700; src: url(fonts/montserrat-700.woff2) format("woff2"); font-display: swap; }
+:root { --fond: #f4f6f9; --carte: #ffffff; --texte: #1b1b1a; --doux: #52514e; --bord: #dfe3ea; --bleu: #1C5CAB; --bleu-clair: #eaf2fc; --vert: #127a55; --orange: #b04a1e; }
+@media (prefers-color-scheme: dark) {
+  :root { --fond: #121417; --carte: #1b1e23; --texte: #ecebe7; --doux: #b5b3ad; --bord: #2e333b; --bleu: #6da7ec; --bleu-clair: #1a2a40; --vert: #4cc79a; --orange: #f0915f; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--fond); color: var(--texte); font: 19px/23px Montserrat, sans-serif; }
+main { max-width: 1040px; margin: 0 auto; padding: 32px 16px 48px; }
+header { background: var(--bleu); color: #fff; }
+header .dedans { max-width: 1040px; margin: 0 auto; padding: 40px 16px 36px; }
+header h1 { margin: 0 0 12px; font-size: 34px; line-height: 40px; font-weight: 700; }
+header p { margin: 0; opacity: .92; }
+.boutons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.bouton { display: inline-block; padding: 12px 20px; border-radius: 10px; font-weight: 600; text-decoration: none; }
+.bouton.plein { background: #fff; color: #1C5CAB; }
+.bouton.vide { border: 2px solid #fff; color: #fff; }
+.note { font-size: 16px; line-height: 21px; opacity: .9; margin-top: 12px; }
+section { background: var(--carte); border: 1px solid var(--bord); border-radius: 14px; padding: 24px; margin-bottom: 24px; }
+h2 { margin: 0 0 14px; font-size: 24px; line-height: 30px; color: var(--bleu); }
+.grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+.indicateur { background: var(--bleu-clair); border-radius: 12px; padding: 16px; }
+.indicateur b { display: block; font-size: 26px; line-height: 32px; }
+.indicateur span { font-size: 16px; line-height: 20px; color: var(--doux); }
+img { width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--bord); background: #fff; }
+figure { margin: 0; }
+figcaption { font-size: 16px; line-height: 21px; color: var(--doux); margin-top: 8px; }
+ul { margin: 0; padding-left: 22px; }
+li { margin-bottom: 8px; }
+.pos { color: var(--vert); font-weight: 600; }
+.neg { color: var(--orange); font-weight: 600; }
+footer { text-align: center; font-size: 15px; line-height: 20px; color: var(--doux); padding: 0 16px 32px; }
+a { color: var(--bleu); }
+@media (max-width: 600px) { header h1 { font-size: 26px; line-height: 32px; } section { padding: 18px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="dedans">
+    <h1>Apprentissage par renforcement dans l'algorithme génétique pour le problème du sac à dos</h1>
+    <p>Mémoire de Master Recherche en Informatique — RALAIVAO Niaiko Michaël · École Nationale d'Informatique, Université de Fianarantsoa · laboratoire LIMAD, équipe GLoRIA · directeur : Pr MAHATODY Thomas.</p>
+    <div class="boutons">
+      <a class="bouton plein" href="https://rlga-knapsack.onrender.com" target="_blank" rel="noopener">Ouvrir l'application interactive</a>
+      <a class="bouton vide" href="https://github.com/Recherche-Niaiko/rlga-knapsack" target="_blank" rel="noopener">Code source (licence MIT)</a>
+    </div>
+    <p class="note">L'application est hébergée gratuitement : après une période sans visite, elle se met en veille et demande environ une minute pour redémarrer.</p>
+  </div>
+</header>
+<main>
+  <section>
+    <h2>Le travail en bref</h2>
+    <p>Les algorithmes génétiques résolvent efficacement le problème du sac à dos et sa version multidimensionnelle, mais leur performance dépend du choix de leurs opérateurs. Dans ce travail, un agent de Q-learning observe à chaque génération l'état de la population — diversité, stagnation, avancement — et choisit un couple croisement–mutation parmi neuf. L'agent, appris en ligne ou pré-entraîné sur des instances faciles puis transféré, est comparé à la programmation dynamique, à la programmation linéaire en nombres entiers, à l'heuristique gloutonne, à une sélection aléatoire des opérateurs et à un bandit UCB1, sur 143 instances et jusqu'à 10 000 objets.</p>
+  </section>
+
+  <section>
+    <h2>Principaux résultats</h2>
+    <div class="grille">
+      <div class="indicateur"><b>0,0382 % → 0,0074 %</b><span>écart moyen à l'optimum : algorithme génétique standard, puis piloté par Q-learning pré-entraîné (54 instances générées)</span></div>
+      <div class="indicateur"><b>0,0407 % → 0,0174 %</b><span>même comparaison sur 31 instances de référence, dont les instances difficiles de Jooken et al.</span></div>
+      <div class="indicateur"><b>3 à 8 fois</b><span>moins d'écart que l'algorithme génétique standard lors du passage à l'échelle</span></div>
+      <div class="indicateur"><b>0,335 % → 0,236 %</b><span>sur 58 sacs à dos multidimensionnels, sans gain propre du transfert</span></div>
+    </div>
+    <ul style="margin-top:18px">
+      <li><span class="pos">Confirmé</span> — piloter l'algorithme génétique réduit nettement l'écart à l'optimum ; le pré-entraînement apporte un gain propre à l'apprentissage.</li>
+      <li><span class="neg">Nuancé</span> — appris en ligne sur une seule exécution, le Q-learning ne fait pas mieux qu'une sélection aléatoire des opérateurs ; le gain vient alors de la diversification.</li>
+      <li><span class="neg">Limites</span> — le transfert vers le sac à dos multidimensionnel n'apporte pas de gain, l'heuristique gloutonne l'emporte au-delà de 5 000 objets, et les méthodes exactes restent supérieures sur les instances de taille modérée.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Écart à l'optimum par classe d'instances</h2>
+    <figure>
+      <img src="images/e1_ecart_par_classe.png" alt="Écart moyen à l'optimum par classe d'instances de Pisinger et par méthode" loading="lazy">
+      <figcaption>Écart moyen à l'optimum par classe de Pisinger et par méthode, avec intervalles de confiance à 95 % (54 instances générées) : sur les classes corrélées SC et ASC, l'algorithme génétique standard est nettement le plus éloigné de l'optimum ; les variantes adaptatives se regroupent, et la politique pré-entraînée est la plus proche de la meilleure configuration fixe.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>L'application interactive</h2>
+    <figure>
+      <img src="images/application.jpg" alt="Page d'accueil de l'application, en thème clair et en thème sombre" loading="lazy">
+      <figcaption>L'application permet d'explorer une instance, de comparer les méthodes en direct, de lire la politique apprise, de consulter les résultats des campagnes, de résoudre quatre cas d'usage et de vérifier les hypothèses de recherche.</figcaption>
+    </figure>
+  </section>
+</main>
+<footer>
+  RALAIVAO Niaiko Michaël · 2026 · code sous licence MIT, textes et figures sous licence CC BY 4.0 · police Montserrat (SIL Open Font License).
+</footer>
+</body>
+</html>

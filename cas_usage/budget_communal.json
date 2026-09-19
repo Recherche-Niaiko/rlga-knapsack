@@ -1,0 +1,16 @@
+{
+ "titre": "Sélection de projets d'investissement communaux sous contrainte budgétaire",
+ "description": "Une commune dispose d'un budget annuel d'investissement et doit choisir, parmi 120 projets proposés par les fokontany, ceux qui maximisent l'impact social (bénéficiaires pondérés par l'urgence). Modèle : KP 0/1.",
+ "value_column": "score d'impact",
+ "weight_columns": [
+  "coût (M Ar)"
+ ],
+ "capacities": [
+  5566.1
+ ],
+ "unites": [
+  "M Ar"
+ ],
+ "label_column": "projet",
+ "donnees": "synthétiques (illustratives)"
+}

@@ -1,0 +1,16 @@
+{
+ "titre": "Sélection d'un portefeuille d'investissements sous budget",
+ "description": "Un fonds dispose d'un budget et choisit parmi 400 opportunités ; la valeur attendue est presque proportionnelle au montant investi — structure « fortement corrélée » (Pisinger) qui rend le glouton peu discriminant. KP 0/1 difficile.",
+ "value_column": "valeur attendue à 3 ans (k USD)",
+ "weight_columns": [
+  "investissement (k USD)"
+ ],
+ "capacities": [
+  80374.0
+ ],
+ "unites": [
+  "k USD"
+ ],
+ "label_column": "secteur",
+ "donnees": "synthétiques (illustratives)"
+}

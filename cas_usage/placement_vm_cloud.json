@@ -1,0 +1,22 @@
+{
+ "titre": "Admission de machines virtuelles sur un serveur (CPU, RAM, disque)",
+ "description": "Un hébergeur doit accepter un sous-ensemble de 300 demandes de machines virtuelles sur une grappe de capacité limitée (256 vCPU, 1 To de RAM, 20 To de disque) afin de maximiser le revenu mensuel. KP multidimensionnel (m = 3).",
+ "value_column": "revenu mensuel (USD)",
+ "weight_columns": [
+  "vCPU",
+  "RAM (Go)",
+  "disque (Go)"
+ ],
+ "capacities": [
+  256.0,
+  1024.0,
+  20000.0
+ ],
+ "unites": [
+  "vCPU",
+  "Go",
+  "Go"
+ ],
+ "label_column": "profil",
+ "donnees": "synthétiques (illustratives)"
+}

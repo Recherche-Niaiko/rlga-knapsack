@@ -1,0 +1,121 @@
+id,projet,fokontany,coût (M Ar),bénéficiaires,urgence (1-5),score d'impact
+P001,Terrain de sport,Tanambao,72.4,463,1,3.7
+P002,Éclairage public solaire,Ambatomena,65.1,974,4,13.6
+P003,Bibliothèque communale,Antarandolo,86.8,1498,1,12.0
+P004,Digue anti-inondation,Talatamaty,320.6,5284,4,74.0
+P005,Puits / borne-fontaine,Mahamanina,38.9,700,3,8.4
+P006,Éclairage public solaire,Anjoma,59.0,585,5,9.4
+P007,Puits / borne-fontaine,Mahamanina,42.7,769,3,9.2
+P008,Marché couvert,Ampitakely,271.1,3018,3,36.2
+P009,Centre de santé de base (CSB),Andohanitralika,356.3,3843,3,46.1
+P010,Terrain de sport,Ambalapaiso,64.9,1827,2,18.3
+P011,Marché couvert,Mahamanina,195.2,4863,5,77.8
+P012,Terrain de sport,Andrainjato,65.4,1472,3,17.7
+P013,École primaire (2 salles),Anjoma,164.9,2348,2,23.5
+P014,Marché couvert,Ivory,236.6,4910,1,39.3
+P015,Digue anti-inondation,Ivory,402.4,11071,3,132.9
+P016,Marché couvert,Anjoma,243.2,3083,4,43.2
+P017,Digue anti-inondation,Ambatomena,299.1,4877,3,58.5
+P018,Latrines publiques,Andohanitralika,36.2,439,3,5.3
+P019,Éclairage public solaire,Ivory,52.3,564,1,4.5
+P020,Centre de santé de base (CSB),Talatamaty,396.6,5054,1,40.4
+P021,Latrines publiques,Andrainjato,30.8,226,5,3.6
+P022,Puits / borne-fontaine,Andrainjato,67.5,652,1,5.2
+P023,Digue anti-inondation,Antarandolo,293.9,4226,2,42.3
+P024,Puits / borne-fontaine,Mahamanina,43.2,1222,5,19.6
+P025,Latrines publiques,Andrainjato,27.0,550,4,7.7
+P026,Digue anti-inondation,Talatamaty,314.9,3179,2,31.8
+P027,Latrines publiques,Talatamaty,25.9,661,4,9.3
+P028,Digue anti-inondation,Talatamaty,221.7,2150,4,30.1
+P029,Marché couvert,Antarandolo,276.9,3455,1,27.6
+P030,Adduction d'eau (village),Ambatomena,128.7,1757,3,21.1
+P031,Éclairage public solaire,Ampitakely,67.6,951,4,13.3
+P032,Éclairage public solaire,Andrainjato,61.6,1066,3,12.8
+P033,Éclairage public solaire,Mahamanina,69.2,791,1,6.3
+P034,Réhabilitation piste rurale (km),Ambatomena,121.8,1719,5,27.5
+P035,Bibliothèque communale,Tanambao,76.8,2032,2,20.3
+P036,Puits / borne-fontaine,Mahamanina,49.6,1111,2,11.1
+P037,Éclairage public solaire,Anjoma,68.3,1339,3,16.1
+P038,Bibliothèque communale,Ampitakely,92.5,2496,3,30.0
+P039,Bibliothèque communale,Ivory,65.6,1025,4,14.3
+P040,Bibliothèque communale,Antarandolo,72.4,1375,1,11.0
+P041,École primaire (2 salles),Tanambao,223.0,2169,2,21.7
+P042,Puits / borne-fontaine,Andrainjato,60.2,427,4,6.0
+P043,École primaire (2 salles),Andrainjato,157.2,4916,5,78.7
+P044,Réhabilitation piste rurale (km),Talatamaty,128.8,2138,2,21.4
+P045,Centre de santé de base (CSB),Ambatomena,341.4,6079,3,72.9
+P046,Latrines publiques,Talatamaty,34.1,283,3,3.4
+P047,Centre de santé de base (CSB),Anjoma,367.9,7859,2,78.6
+P048,École primaire (2 salles),Isada,250.0,4254,2,42.5
+P049,Réhabilitation piste rurale (km),Tanambao,105.3,2727,2,27.3
+P050,Digue anti-inondation,Isada,264.8,7911,2,79.1
+P051,Centre de santé de base (CSB),Isada,325.7,9035,5,144.6
+P052,Bibliothèque communale,Andrainjato,68.7,2389,4,33.4
+P053,Adduction d'eau (village),Isada,188.5,3722,4,52.1
+P054,Pont / radier,Anjoma,294.2,3545,5,56.7
+P055,École primaire (2 salles),Tanambao,198.1,3019,3,36.2
+P056,Marché couvert,Andrainjato,231.8,4256,5,68.1
+P057,Digue anti-inondation,Tanambao,322.3,5606,2,56.1
+P058,Réhabilitation piste rurale (km),Talatamaty,132.4,2351,4,32.9
+P059,Latrines publiques,Isada,23.0,606,1,4.8
+P060,Terrain de sport,Ambalapaiso,71.4,1329,4,18.6
+P061,Bibliothèque communale,Ambalapaiso,92.9,1705,1,13.6
+P062,Digue anti-inondation,Mahamanina,337.2,4473,1,35.8
+P063,Pont / radier,Ambatomena,263.4,3938,3,47.3
+P064,Marché couvert,Andohanitralika,244.2,2541,1,20.3
+P065,Puits / borne-fontaine,Tanambao,45.6,827,3,9.9
+P066,Réhabilitation piste rurale (km),Mahamanina,110.1,1043,4,14.6
+P067,Latrines publiques,Ivory,27.0,439,2,4.4
+P068,Éclairage public solaire,Andohanitralika,63.0,1012,1,8.1
+P069,Terrain de sport,Ambalapaiso,58.7,1177,5,18.8
+P070,École primaire (2 salles),Antarandolo,219.0,4896,5,78.3
+P071,Réhabilitation piste rurale (km),Andrainjato,100.5,2644,2,26.4
+P072,Puits / borne-fontaine,Ivory,49.8,1384,5,22.1
+P073,École primaire (2 salles),Ambalapaiso,195.7,2027,2,20.3
+P074,Latrines publiques,Mahamanina,33.4,526,2,5.3
+P075,Marché couvert,Talatamaty,230.1,5195,4,72.7
+P076,Latrines publiques,Anjoma,28.7,541,1,4.3
+P077,Puits / borne-fontaine,Antarandolo,53.3,1401,1,11.2
+P078,Marché couvert,Antarandolo,179.5,4084,4,57.2
+P079,Digue anti-inondation,Ambatomena,326.4,5539,2,55.4
+P080,Réhabilitation piste rurale (km),Ambatomena,86.6,1246,1,10.0
+P081,Digue anti-inondation,Andrainjato,327.6,8142,5,130.3
+P082,Latrines publiques,Ambalapaiso,32.3,515,3,6.2
+P083,Centre de santé de base (CSB),Talatamaty,384.6,4140,5,66.2
+P084,Marché couvert,Anjoma,261.4,4007,2,40.1
+P085,Pont / radier,Ambatomena,335.5,6207,4,86.9
+P086,École primaire (2 salles),Anjoma,181.4,3727,1,29.8
+P087,Latrines publiques,Ambalapaiso,25.6,629,2,6.3
+P088,Réhabilitation piste rurale (km),Ambatomena,134.3,2073,3,24.9
+P089,Pont / radier,Talatamaty,285.7,5097,5,81.6
+P090,Latrines publiques,Ambatomena,27.0,352,2,3.5
+P091,Bibliothèque communale,Ivory,90.8,2525,5,40.4
+P092,Latrines publiques,Mahamanina,21.5,422,4,5.9
+P093,Réhabilitation piste rurale (km),Talatamaty,130.0,1491,5,23.9
+P094,Terrain de sport,Ivory,72.0,952,3,11.4
+P095,Adduction d'eau (village),Ambatomena,167.4,2157,3,25.9
+P096,Digue anti-inondation,Ambatomena,294.3,5921,3,71.1
+P097,Adduction d'eau (village),Talatamaty,145.4,1722,1,13.8
+P098,Latrines publiques,Antarandolo,27.3,825,3,9.9
+P099,Pont / radier,Antarandolo,272.1,2935,4,41.1
+P100,École primaire (2 salles),Ampitakely,169.3,3955,2,39.5
+P101,Pont / radier,Andrainjato,167.2,4060,2,40.6
+P102,Latrines publiques,Talatamaty,32.1,617,2,6.2
+P103,Terrain de sport,Ampitakely,78.3,1203,4,16.8
+P104,Terrain de sport,Isada,80.2,807,3,9.7
+P105,Terrain de sport,Ambalapaiso,77.6,1639,2,16.4
+P106,Marché couvert,Ambatomena,189.1,4295,2,43.0
+P107,Réhabilitation piste rurale (km),Isada,152.2,1741,2,17.4
+P108,École primaire (2 salles),Tanambao,186.4,4353,1,34.8
+P109,Réhabilitation piste rurale (km),Andrainjato,128.1,1133,3,13.6
+P110,Digue anti-inondation,Talatamaty,266.5,4618,3,55.4
+P111,École primaire (2 salles),Tanambao,201.8,3264,2,32.6
+P112,Pont / radier,Talatamaty,288.0,5348,2,53.5
+P113,Latrines publiques,Ampitakely,25.2,200,4,2.8
+P114,Centre de santé de base (CSB),Tanambao,352.9,6902,3,82.8
+P115,Éclairage public solaire,Ampitakely,64.5,1300,4,18.2
+P116,École primaire (2 salles),Ambatomena,128.0,1459,2,14.6
+P117,Puits / borne-fontaine,Ambalapaiso,52.9,733,5,11.7
+P118,École primaire (2 salles),Tanambao,184.8,2225,5,35.6
+P119,Éclairage public solaire,Talatamaty,60.9,1309,3,15.7
+P120,Pont / radier,Isada,271.9,5417,5,86.7

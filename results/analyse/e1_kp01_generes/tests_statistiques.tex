@@ -1,0 +1,22 @@
+\begin{table}
+\caption{Tests statistiques — e1_kp01_generes}
+\label{tab:tests-e1_kp01_generes}
+\begin{tabular}{lrrrrlrrl}
+\toprule
+comparaison & écart moyen cible (%) & écart moyen autre (%) & p (Wilcoxon) & A12 moyen & V/E/D & n instances & p Holm & significatif (α=0,05) \\
+\midrule
+AG + QL pré-entraîné vs AG standard & 0.00744 & 0.0382 & 5.68e-09 & 0.738 & 28/26/0 & 54 & 3.41e-08 & oui \\
+AG + QL pré-entraîné vs AG op. aléatoires & 0.00744 & 0.0111 & 9.01e-05 & 0.588 & 9/45/0 & 54 & 0.000451 & oui \\
+AG + QL pré-entraîné vs AG + UCB1 & 0.00744 & 0.0109 & 0.000957 & 0.583 & 10/44/0 & 54 & 0.00287 & oui \\
+AG + QL pré-entraîné vs AG + QL (en ligne) & 0.00744 & 0.0111 & 0.000397 & 0.579 & 7/47/0 & 54 & 0.00159 & oui \\
+AG + QL pré-entraîné vs AG + QL pré-entraîné + φ(I) & 0.00744 & 0.0105 & 0.00153 & 0.566 & 7/47/0 & 54 & 0.00307 & oui \\
+AG + QL pré-entraîné vs Meilleure config. fixe (oracle) & 0.00744 & 0.00492 & 0.00173 & 0.421 & 0/45/9 & 54 & 0.00307 & oui \\
+AG + QL (en ligne) vs AG standard & 0.0111 & 0.0382 & 1.42e-08 & 0.71 & 24/30/0 & 54 & 8.54e-08 & oui \\
+AG + QL (en ligne) vs AG op. aléatoires & 0.0111 & 0.0111 & 0.811 & 0.506 & 0/53/1 & 54 & 1 & non \\
+AG + QL (en ligne) vs AG + UCB1 & 0.0111 & 0.0109 & 0.861 & 0.508 & 1/51/2 & 54 & 1 & non \\
+AG + QL (en ligne) vs AG + QL pré-entraîné & 0.0111 & 0.00744 & 0.000397 & 0.421 & 0/47/7 & 54 & 0.00159 & oui \\
+AG + QL (en ligne) vs AG + QL pré-entraîné + φ(I) & 0.0111 & 0.0105 & 0.48 & 0.488 & 0/53/1 & 54 & 1 & non \\
+AG + QL (en ligne) vs Meilleure config. fixe (oracle) & 0.0111 & 0.00492 & 1.26e-05 & 0.358 & 0/37/17 & 54 & 6.28e-05 & oui \\
+\bottomrule
+\end{tabular}
+\end{table}
